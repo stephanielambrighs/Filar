@@ -105,6 +105,7 @@
 }
 .card__body {
   margin-left: 1.5em;
+  color: #7E8498;
 }
 .card__image {
   display: block;
@@ -115,6 +116,7 @@
 }
 .card__body--switch {
   margin-left: 1.5em;
+  color: #7E8498;
 }
 .card__subtitle__usecases {
   text-align: center;

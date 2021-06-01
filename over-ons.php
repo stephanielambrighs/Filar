@@ -16,7 +16,7 @@
   <h1 class="card__title">Wie zijn we?</h1>
   <div class="card__header--switch">
     <figure class="card__figure--switch">
-      <img src="https://satyr.io/400x200?text=card__image" alt="" class="card__image">
+      <img src="/images/5_WieZijnWe.png" alt="wie_zijn_we" class="card__image">
     </figure>
     <div class="card__body--switch ">
         <p class="card__copy">
@@ -36,7 +36,7 @@
   <h1 class="card__title">Wat is onze missie?</h1>
   <div class="card__header">
     <figure class="card__figure">
-      <img src="https://satyr.io/400x200?text=card__image" alt="" class="card__image">
+      <img src="/images/6_OnzeMissie.png" alt="onze_missie" class="card__image">
     </figure>
     <div class="card__body">
         <p class="card__copy">
