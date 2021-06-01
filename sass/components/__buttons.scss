@@ -14,3 +14,18 @@
 .button:hover {
     box-shadow: 1px 3px#2628BA;
 }
+
+
+@media screen and (min-width: 650px) {
+    .button {
+        margin-top: 2em;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    .button {
+        margin-top: 2em;
+    }
+
+}
