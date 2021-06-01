@@ -405,6 +405,10 @@
   padding: 0.7em;
   border-bottom: 2px solid #DBDBDB;
 }
+.table__image {
+  width: 80px;
+  border-radius: 10px;
+}
 
 @media screen and (min-width: 650px) {
   .table {
@@ -427,6 +431,9 @@
     color: #262F4A;
     padding: 0.7em;
     border-bottom: 2px solid #DBDBDB;
+  }
+  .table__subtitle--product {
+    padding: 1em;
   }
 }
 @media screen and (min-width: 992px) {
