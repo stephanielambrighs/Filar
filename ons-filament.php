@@ -15,7 +15,7 @@
   <h1 class="card__title">Eigenschappen</h1>
   <div class="card__header">
     <figure class="card__figure">
-      <img src="https://satyr.io/400x200?text=card__image" alt="" class="card__image">
+      <img src="/images/2_Sterk.png" alt="sterk" class="card__image">
     </figure>
     <div class="card__body">
         <h2 class="card__subtitle">Sterk</h2>
@@ -30,7 +30,7 @@
   </div>
   <div class="card__header--switch">
     <figure class="card__figure--switch">
-      <img src="https://satyr.io/400x200?text=card__image" alt="" class="card__image">
+      <img src="/images/3_Bestendig.png" alt="bestendig" class="card__image">
     </figure>
     <div class="card__body--switch">
         <h2 class="card__subtitle">Bestendig</h2>
@@ -46,7 +46,7 @@
   </div>
   <div class="card__header">
     <figure class="card__figure">
-      <img src="https://satyr.io/400x200?text=card__image" alt="" class="card__image">
+      <img src="/images/4_WeinigVervorming.png" alt="vervorming" class="card__image">
     </figure>
     <div class="card__body">
         <h2 class="card__subtitle">Weinig vervorming</h2>
@@ -65,7 +65,7 @@
 <article class="card--usecases">
   <div class="card__header__usecases">
     <figure class="card__figure">
-      <img src="https://satyr.io/400x200?text=card__image" alt="" class="card__image__usecases">
+      <img src="/images/1_usecase.jpg" alt="usecase_huishoudelijk" class="card__image__usecases">
     </figure>
     <div class="card__body">
         <h2 class="card__subtitle__usecases">Huishoudelijk</h2>
@@ -73,7 +73,7 @@
   </div>
   <div class="card__header__usecases">
     <figure class="card__figure">
-      <img src="https://satyr.io/400x200?text=card__image" alt="" class="card__image__usecases">
+      <img src="/images/2_usecase.jpg" alt="usecase_medisch" class="card__image__usecases">
     </figure>
     <div class="card__body">
         <h2 class="card__subtitle__usecases">Medisch hulpmiddel</h2>
@@ -81,7 +81,7 @@
   </div>
   <div class="card__header__usecases">
     <figure class="card__figure">
-      <img src="https://satyr.io/400x200?text=card__image" alt="" class="card__image__usecases">
+      <img src="/images/3_usecase.jpg" alt="usecase_design" class="card__image__usecases">
     </figure>
     <div class="card__body">
         <h2 class="card__subtitle__usecases">Design</h2>
