@@ -38,7 +38,7 @@
     <th class="table__title--item">Subtotaal</th>
   </tr>
   <tr class="table__item">
-    <td class="table__subtitle"><img class="table__image" src="/images/product_smarthone_houder.jpg" alt="smarthphone_houder"><span class="table__subtitle--product">Smartphone houder</span></td>
+    <td class="table__subtitle"><img class="table__image" src="/images/product_smartphone_houder.jpg" alt="smarthphone_houder"><span class="table__subtitle--product">Smartphone houder</span></td>
     <td class="table__subtitle">05/03/2021</td>
     <td class="table__subtitle">€15</td>
     <td class="table__subtitle">1</td>
