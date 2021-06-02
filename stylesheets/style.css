@@ -315,12 +315,14 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-left: 0.2em;
 }
 .card__image__print--center {
-  width: 100px;
+  width: 150px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 2em;
 }
 .card__subtitle__shop--center {
   text-align: center;
@@ -399,7 +401,7 @@
     color: #262F4A;
   }
   .card__image__print--center {
-    width: 160px;
+    width: 200px;
   }
   .card__header__shop--center {
     max-width: 450px;

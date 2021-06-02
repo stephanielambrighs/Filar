@@ -134,13 +134,15 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+        margin-left: 0.2em;
     }
 
     &__image__print--center{
-        width: 100px;
+        width: 150px;
         display: block;
         margin-left: auto;
         margin-right: auto;
+        padding-bottom: 2em;
     }
 
     &__subtitle__shop--center{
@@ -243,7 +245,7 @@
 
 
         &__image__print--center{
-            width: 160px;
+            width: 200px;
         }
 
         &__header__shop--center{
