@@ -129,6 +129,66 @@
   margin-bottom: 0;
 }
 
+.form {
+  background-color: #F4F6FB;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #262F4A;
+}
+.form__title {
+  text-align: center;
+  margin-top: 0;
+  padding: 42px;
+}
+.form__header {
+  display: grid;
+  grid-template-rows: 20% 20%;
+  margin: 1em 2em;
+  margin-left: 1.5em;
+}
+.form__label {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.form__input {
+  border-radius: 10px;
+  border: 2px solid white;
+  height: 35px;
+  color: #262F4A;
+}
+.form__link {
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 3em;
+  color: #262F4A;
+  margin-bottom: 4em;
+}
+.form__link--code {
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 3em;
+  color: #262F4A;
+  margin-bottom: 4em;
+}
+.form__header:nth-child(4) {
+  margin-bottom: 0;
+}
+.form__header:nth-child(5) {
+  margin-bottom: 0;
+}
+.form__header--first {
+  display: grid;
+  grid-template-rows: 20% 20%;
+  margin: 1em 2em;
+  margin-left: 0em;
+}
+
+#myTextarea {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+}
+
 @media screen and (min-width: 650px) {
   .form-group__title {
     margin-bottom: 0;
@@ -142,6 +202,14 @@
   }
   .form-group__input {
     height: 55px;
+  }
+
+  .form__header {
+    margin-right: 5em;
+  }
+
+  #myTextarea {
+    padding-bottom: 18em;
   }
 }
 .button {
@@ -235,7 +303,16 @@
   background-color: white;
   margin-bottom: 0;
 }
+.card__title--models {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.8em;
+}
 .card__body {
+  margin-left: 1.5em;
+  color: #7E8498;
+}
+.card__body--models {
   margin-left: 1.5em;
   color: #7E8498;
 }
@@ -406,6 +483,22 @@
   border-radius: 10px;
   width: 25em;
 }
+.card__image--models {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  width: 200px;
+}
+.card__subtitle--models {
+  text-align: center;
+}
+.card__image--models--netfabb {
+  width: 170px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 #mission {
   background-color: white;
@@ -421,12 +514,21 @@
   .card__body {
     margin-top: 6em;
   }
+  .card__body--models {
+    margin-top: 6em;
+  }
   .card__image {
     margin-top: 3.5em;
   }
   .card__header--switch {
     display: grid;
     grid-template-columns: 50% 50%;
+  }
+  .card__header--models {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 2em;
+    margin-bottom: 2em;
   }
   .card__body--switch {
     margin-top: 6em;
@@ -437,6 +539,17 @@
     order: 2;
     padding: 0;
     margin-left: 1.8em;
+  }
+  .card__figure--switch--models {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    order: 2;
+    padding: 0;
+    margin-left: 1.8em;
+    margin-top: 10em;
+  }
+  .card__image--models {
+    width: 150px;
   }
   .card--usecases {
     display: grid;
@@ -496,6 +609,21 @@
     width: 20em;
     height: 20em;
   }
+  .card__figure--models {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-left: 1.8em;
+    margin-top: 8em;
+  }
+  .card__image--models--netfabb {
+    width: 120px;
+  }
+  .card__title--models {
+    margin-bottom: -2em;
+  }
+  .card__form {
+    margin-top: 5em;
+  }
 }
 @media screen and (min-width: 992px) {
   .card__header {
@@ -508,6 +636,9 @@
   }
   .card__body {
     margin-right: 10em;
+  }
+  .card__body--models {
+    margin-left: 5em;
   }
   .card__body--switch {
     order: 1;
