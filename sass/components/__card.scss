@@ -219,6 +219,14 @@
         color: #262F4A;
         font-weight: 600;
     }
+
+    &__image--filament {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        width: 25em;
+    }
 }
 
 #mission {
@@ -330,6 +338,11 @@
         &__body--item {
             margin-right: 1.5em;
         }
+
+        &__image--filament {
+            width: 20em;
+            height: 20em;
+        }
     }
 
 
@@ -417,6 +430,11 @@
 
         &__image--item {
             width: 380px;
+        }
+
+        &__image--filament {
+            width: 25em;
+            height: 25em;
         }
     }
 }

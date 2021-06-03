@@ -399,6 +399,13 @@
   color: #262F4A;
   font-weight: 600;
 }
+.card__image--filament {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  width: 25em;
+}
 
 #mission {
   background-color: white;
@@ -485,6 +492,10 @@
   .card__body--item {
     margin-right: 1.5em;
   }
+  .card__image--filament {
+    width: 20em;
+    height: 20em;
+  }
 }
 @media screen and (min-width: 992px) {
   .card__header {
@@ -548,6 +559,10 @@
   }
   .card__image--item {
     width: 380px;
+  }
+  .card__image--filament {
+    width: 25em;
+    height: 25em;
   }
 }
 .list {
