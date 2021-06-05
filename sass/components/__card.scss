@@ -1,0 +1,531 @@
+.card {
+    background-color: #F4F6FB;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    margin-top: 0;
+
+    &__title{
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 1.8em;
+    }
+
+    &__title--item {
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 1.8em;
+        padding: 1em;
+        background-color: white;
+        margin-bottom: 0;
+    }
+
+    &__title--models {
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 1.8em;
+    }
+
+    &__body {
+        margin-left: 1.5em;
+        color: #7E8498;
+    }
+
+    &__body--models{
+        margin-left: 1.5em;
+        color: #7E8498;
+    }
+
+    &__image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        width: 20em;
+    }
+
+    &__body--switch {
+        margin-left: 1.5em;
+        color: #7E8498;
+    }
+
+    &__subtitle__usecases{
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    &--usecases{
+        margin-top: 42px;
+        margin-bottom: 42px;
+    }
+
+    &__image__usecases {
+        width: 317px;
+        height: 317px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+    }
+
+    &__body--tracker {
+        text-align: center;
+    }
+
+    &__subtitle--h3 {
+        color: #2628BA;
+        font-size: 1.6em;
+    }
+
+    &__copy--code {
+        color: #7E8498;
+        margin-left: 2em;
+        margin-bottom: 4em;
+        margin-top: 3em;
+        margin-right: 2em;
+    }
+
+    &--code {
+        background-color: #F4F6FB;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding-top: 1em;
+        padding-bottom: 2em;
+        margin-top: 0;
+    }
+
+    &__image--chart{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        width: 20em;
+    }
+
+
+    &--shop{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+    }
+
+    &--shop--item {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+        background-color: white;
+        padding-top: 2.5em;
+    }
+
+    &__shop--ownarticle {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+        background-color: white;
+    }
+
+    &__body__shop{
+        margin: 0;
+    }
+
+    &__image__print {
+        width: 200px;
+        height: 230px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+    }
+
+    &__subtitle__body{
+        color: #7E8498;
+    }
+
+    &__image__print--ownarticle{
+        width: 300px;
+        height: 280px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+    }
+
+
+    &__subtitle__shop {
+        color: #262F4A;
+    }
+
+    &__shop--center {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding-top: 1em;
+        padding-bottom: 5em;
+    }
+
+    &__header__shop--center{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-left: 0.2em;
+    }
+
+    &__image__print--center{
+        width: 150px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 2em;
+    }
+
+    &__subtitle__shop--center{
+        text-align: center;
+        padding-bottom: 1em;
+    }
+
+    &__body--item {
+        margin-left: 1.5em;
+        color: #7E8498;
+    }
+
+    &__body__block {
+        margin-top: 5em;
+        display: grid;
+        grid-template-columns: 55px 10% 80%;
+    }
+
+    &__arrow--first {
+        display: grid;
+        width: 50px;
+    }
+
+    &__arrow--second {
+        display: grid;
+        width: 50px;
+    }
+
+    &__img--first, &__img--second{
+        width: 28px;
+    }
+
+    &__img--first{
+        transform: rotate(180deg);
+    }
+
+    &__image--item {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        width: 20em;
+    }
+
+    &__subtitle--item {
+        color: #262F4A;
+
+    }
+
+    &__count {
+        border: 3px solid #262F4A;
+        padding: 15px 22px;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    &__count span {
+        color: #262F4A;
+        font-weight: 600;
+    }
+
+    &__image--filament {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        width: 25em;
+    }
+
+    &__image--models{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        width: 200px;
+    }
+
+    &__subtitle--models {
+        text-align: center;
+    }
+
+    &__image--models--netfabb {
+        width: 170px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__form--split {
+        margin-left: 2em;
+    }
+
+    &__title--split {
+        text-align: center;
+    }
+
+    &__image--icon {
+        width: 50px;
+        margin-bottom: -1em;
+    }
+}
+
+#mission {
+    background-color: white;
+}
+
+@media screen and (min-width: 650px) {
+    .card{
+
+        &__header{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+
+        &__body {
+            margin-top: 6em;
+        }
+
+        &__body--models{
+            margin-top: 6em;
+        }
+
+        &__image{
+            margin-top: 3.5em;
+        }
+
+        &__header--switch {
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+        &__header--models {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+
+        &__body--switch {
+            margin-top: 6em;
+            order: 1;
+            margin-left: 1.5em;
+        }
+
+        &__figure--switch {
+            order: 2;
+            padding: 0;
+            margin-left: 1.8em;
+        }
+
+        &__figure--switch--models {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            order: 2;
+            padding: 0;
+            margin-left: 1.8em;
+            margin-top: 10em;
+        }
+
+        &__image--models {
+            width: 150px;
+        }
+
+        &--usecases{
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+        }
+
+        &__image__usecases{
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        &__subtitle__usecases{
+            margin-left: 0em;
+            margin-top: -2.5em;
+            text-align: center;
+        }
+
+        &__header--code {
+            margin-left: 5em;
+            margin-right: 5em;
+        }
+
+        &__image--chart{
+            margin-top: 3.5em;
+        }
+
+        &--shop{
+            display:grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+        }
+
+        &--shop--item {
+            display:grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+        }
+
+        &__image__print {
+            width: 116px;
+            height: 150px;
+        }
+
+        &__shop--ownarticle {
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+
+        &__image__print--ownarticle{
+            width: 300px;
+            height: 280px;
+        }
+
+
+        &__subtitle__shop {
+            color: #262F4A;
+        }
+
+
+        &__image__print--center{
+            width: 200px;
+        }
+
+        &__header__shop--center{
+            max-width: 450px;
+            margin: auto;
+        }
+
+        &__body--item {
+            margin-right: 1.5em;
+        }
+
+        &__image--filament {
+            width: 20em;
+            height: 20em;
+        }
+
+        &__figure--models {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            margin-left: 1.8em;
+            margin-top: 8em;
+        }
+
+        &__image--models--netfabb {
+            width: 120px;
+        }
+
+        &__title--models {
+            margin-bottom: -2em;
+        }
+
+        &__form {
+            margin-top: 5em;
+        }
+
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+    .card{
+
+        &__header{
+            display: grid;
+            grid-template-columns: 40% 60%;
+            margin-top: 2em;
+        }
+
+        &__image{
+            margin-top: 3.5em;
+        }
+
+        &__body{
+            margin-right: 10em;
+        }
+
+        &__body--models{
+            margin-left: 5em;
+        }
+
+        &__body--switch {
+            order: 1;
+            margin-left: 5em;
+        }
+
+        &__header--switch {
+            display: grid;
+            grid-template-columns: 60% 40%;
+        }
+
+        &__figure--switch {
+            order: 2;
+            padding: 0;
+            margin-left: 1.5em;
+        }
+
+        &--usecases{
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+
+        }
+
+        &__image__usecases{
+            justify-content: center;
+            width: 300px;
+            height: 300px;
+        }
+
+        &__subtitle__usecases{
+            margin-left: 140px;
+        }
+
+
+        &--code {
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+        &__header--code {
+            margin-left: 5em;
+            margin-right: 5em;
+        }
+
+        &__body--tracker {
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+
+        &__image__print {
+            width: 200px;
+            height: 250px;
+        }
+
+        &__image__print--ownarticle{
+            width: 442px;
+            height: 400px;
+        }
+
+        &__body--item {
+            margin-right: 10em;
+        }
+
+        &__image--item {
+            width: 380px;
+        }
+
+        &__image--filament {
+            width: 25em;
+            height: 25em;
+        }
+    }
+}
+

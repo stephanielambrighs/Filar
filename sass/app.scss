@@ -3,8 +3,14 @@
 @import"components/__footer";
 @import"components/__form";
 @import"components/__buttons.scss";
+@import"components/__card.scss";
+@import"components/__list.scss";
+@import"components/__table.scss";
+
 
 
 body {
-    background-color: blue;
+    background-color: #F4F6FB;
+    box-sizing: border-box;
+    margin: 0;
 }
