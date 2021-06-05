@@ -23,7 +23,7 @@
         border: 2px solid #43CC7C;
     }
 
-    &__code{
+    &__code, &__code--small{
         background-color: #43CC7C;
         padding: 1em 6em;
         text-align: center;
@@ -37,7 +37,7 @@
         border: 2px solid #43CC7C;
     }
 
-    &__item{
+    &__item, &__item--small, &__item--edit{
         background-color: #43CC7C;
         padding: 1.1em 0em;
         text-align: center;
@@ -50,6 +50,28 @@
         margin-left: 0em;
         border: 2px solid #43CC7C;
         width: 300px;
+    }
+
+    &__item--small, &__item--edit {
+        padding: 0.5em;
+        border-radius: 5px;
+        font-size: 0.8em;
+        height: 20px;
+    }
+
+    &__item--edit {
+        background-color: white;
+        color: #43CC7C;
+    }
+
+    &__code--small {
+        padding: 1em 2em;
+        margin-left: 0;
+        width: 250px;
+    }
+
+    &__item--small {
+        margin-top: 2.5em;
     }
 
 }
@@ -67,6 +89,20 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        &__item--small, &__item--edit {
+            padding: 0.5em;
+            border-radius: 5px;
+            font-size: 0.8em;
+        }
+
+        &__item--edit {
+            height: 20px;
+        }
+
+        &__code--small {
+            height: 20px;
         }
     }
 }

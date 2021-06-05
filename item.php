@@ -46,11 +46,8 @@
             </div>
             <div class="card__arrow--first">
                 <a href="#"><img class="card__img--first" src="/images/arrow_icon.png"></a>
-                <!-- <div class="card__arrow--second"> -->
                 <a href="#"><img class="card__img--second" src="/images/arrow_icon.png"></a>
-                <!-- </div> -->
             </div>
-
             <a href="#" class="button__item">
                 <span class="button__body">Toevoegen aan winkelmand</span>
             </a>

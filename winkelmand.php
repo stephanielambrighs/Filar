@@ -14,19 +14,23 @@
 
 <h1 class="card__title">Mijn winkelmand</h1>
 
-<table class="table">
+<table class="table--large">
   <tr class="table__header">
     <th class="table__title">Product</th>
+    <th class="table__title"></th>
     <th class="table__title">Prijs</th>
     <th class="table__title">Aantal</th>
     <th class="table__title--item">Subtotaal</th>
     <th class="table__title"></th>
   </tr>
   <tr class="table__item">
-    <td class="table__subtitle"><img class="table__image" src="/images/product_smartphone_houder.jpg" alt="smarthphone_houder"><span class="table__subtitle--product">Smartphone houder</span></td>
+    <td class="table__subtitle"><img class="table__image" src="/images/product_smartphone_houder.jpg" alt="smarthphone_houder"></td>
+    <td class="table__subtitle">
+        <span class="table__subtitle--product">Smartphone houder</span>
+    </td>
     <td class="table__subtitle">€15</td>
     <td class="table__subtitle">
-        <div class="card__body__block">
+        <div class="card__body__block--large">
             <div class="card__count">
                     <span>1</span>
             </div>
@@ -44,7 +48,7 @@
 </table>
 
 
-<ul class="list">
+<ul class="list--large">
     <div class="list__second">
         <h2 class="list__subtitle">Totaal winkelmand</h2>
         <li class="list__item">Subtotaal
@@ -65,16 +69,30 @@
     </div>
 </ul>
 
-<ul class="list--second">
-    <div class="list__second">
-        <h2 class="list__subtitle">Totaal aankoop</h2>
-        <h2 class="list__subtitle">€28</h2>
-
-
-        <h3 class="list__subtitle">Je hebt 3 kortingsbonnen van 5 euro per stuk*</h3>
-        <h3 class="list__subtitle">€28</h3>
+<article class="card">
+  <div class="card__header--switch">
+    <div class="card__body--shop">
+        <h2 class="card__subtitle--item">Totaal aankoop</h2>
+        <h3 class="card__subtitle--item">Je hebt 3 kortingsbonnen van 5 euro per stuk*</h3>
+        <a href="#" class="button__item--small">
+            <span class="button__body">Een kortingsbon toepassen</span>
+        </a>
+        <p class="card__copy">
+        *Maximum 1 kortingsbon per aankoop
+        </p>
     </div>
-  </ul>
+    <div class="card__body--shop">
+        <h2 class="card__subtitle--item">€28</h2>
+        <a href="#" class="button__item--edit">
+            <span class="button__body">Winkelmand bijwerken</span>
+        </a>
+        <a href="#" class="button__code--small">
+            <span class="button__body">Betalen</span>
+        </a>
+    </div>
+  </div>
+</article>
 
+<?php include_once("inc/footer.inc.php"); ?>
 </body>
 </html>

@@ -270,6 +270,19 @@
         width: 50px;
         margin-bottom: -1em;
     }
+
+    &__body--shop {
+        margin-left: 2.2em;
+        display: grid;
+        grid-template-rows: 33% 20% 33%;
+        // width: 200px;
+    }
+
+    &__body__block--large{
+        margin-top: 0;
+        display: grid;
+        grid-template-columns: 55px 10% 80%;
+    }
 }
 
 #mission {
