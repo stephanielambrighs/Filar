@@ -57,4 +57,19 @@ class User{
     }
 
 
+    public function canLogin() {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("select * from user where email = :email");
+        $statement->bindValue(":email", $this->email);
+        $statement->execute();
+        $dbUser = $statement->fetch();
+        $hash = $dbUser["password"];
+        if(password_verify($this->password, $hash)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
 }
