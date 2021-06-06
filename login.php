@@ -27,7 +27,7 @@
     <a href="#" class="button">
         <span class="button__body">Log in</span>
     </a>
-    <a href="#" class="form-group__link">Ik heb nog geen profiel</a>
+    <a href="registreer.php" class="form-group__link">Ik heb nog geen profiel</a>
   </div>
 </form>
 

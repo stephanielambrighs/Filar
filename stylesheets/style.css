@@ -32,7 +32,6 @@
   background-color: white;
   display: grid;
   grid-template-rows: 25% 25% 25% 25%;
-  border: 2px solid #2628BA;
   list-style-type: none;
   padding: 0;
   margin-top: 0;
@@ -82,6 +81,12 @@
   .sub-nav__list {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
+  }
+  .sub-nav__item {
+    height: 25px;
+  }
+  .sub-nav__item--active {
+    height: 25px;
   }
 }
 .footer {
@@ -140,14 +145,14 @@
 }
 .form-group__header {
   display: grid;
-  grid-template-rows: 20% 20%;
+  grid-template-rows: 33% 33%;
   margin: 2em;
   margin-top: 0;
 }
 .form-group__label {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 600;
-  margin-bottom: 1em;
+  padding-bottom: 1em;
 }
 .form-group__input {
   border-radius: 10px;
@@ -188,14 +193,12 @@
 }
 .form__header {
   display: grid;
-  grid-template-rows: 20% 20%;
   margin: 1em 2em;
   margin-left: 1.5em;
 }
-.form__label {
+.form__label, .form__label--textarea {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 600;
-  margin-top: 1em;
   margin-bottom: 1em;
 }
 .form__input {
@@ -203,6 +206,7 @@
   border: 2px solid white;
   height: 35px;
   color: #262F4A;
+  margin-top: 0.5em;
 }
 .form__link {
   text-align: center;
@@ -226,8 +230,8 @@
 }
 .form__header--first {
   display: grid;
-  grid-template-rows: 20% 20%;
-  margin: 1em 2em;
+  grid-template-rows: 33% 33%;
+  margin: 0em 2em;
   margin-left: 0em;
 }
 
@@ -244,15 +248,23 @@
     max-width: 500px;
     margin: auto;
   }
-  .form-group__label {
-    margin-top: 2em;
-  }
   .form-group__input {
     height: 55px;
   }
 
   .form__header {
     margin-right: 5em;
+  }
+  .form__header--first:nth-child(3) {
+    margin-top: 0em;
+    height: 100px;
+  }
+  .form__label--textarea {
+    height: -100px;
+    width: 350px;
+  }
+  .form__header:nth-child(4) {
+    width: 100px;
   }
 
   #myTextarea {
@@ -271,7 +283,7 @@
   margin-top: 0.5em;
   border: 2px solid #43CC7C;
 }
-.button__longtext {
+.button__longtext, .button__longtext--large, .button__longtext--send {
   background-color: #43CC7C;
   padding: 1em 9em;
   text-align: center;
@@ -280,7 +292,7 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 700;
   border-radius: 10px;
-  margin-top: 1.5em;
+  height: 20px;
   border: 2px solid #43CC7C;
 }
 .button__code, .button__code--small, .button__longtext--home {
@@ -321,9 +333,11 @@
   color: #43CC7C;
 }
 .button__code--small {
-  padding: 1em 2em;
+  padding: 1em 1em;
   margin-left: 0;
-  width: 250px;
+  margin-top: 1em;
+  width: 280px;
+  height: 20px;
 }
 .button__item--small {
   margin-top: 2.5em;
@@ -337,10 +351,43 @@
   box-shadow: 1px 3px #2628BA;
 }
 
+.button__longtext:hover {
+  box-shadow: 1px 3px #2628BA;
+}
+
+.button__code:hover {
+  box-shadow: 1px 3px #2628BA;
+}
+
+.button__code--small:hover {
+  box-shadow: 1px 3px #2628BA;
+}
+
+.button__longtext--home:hover {
+  box-shadow: 1px 3px #2628BA;
+}
+
+.button__item:hover {
+  box-shadow: 1px 3px #2628BA;
+}
+
+.button__item--small:hover {
+  box-shadow: 1px 3px #2628BA;
+}
+
+.button__item--edit:hover {
+  box-shadow: 1px 3px #2628BA;
+}
+
+.button__longtext--send:hover {
+  box-shadow: 1px 3px #2628BA;
+}
+
+.button__longtext--large:hover {
+  box-shadow: 1px 3px #2628BA;
+}
+
 @media screen and (min-width: 650px) {
-  .button {
-    margin-top: 2em;
-  }
   .button__code {
     display: block;
     margin-left: auto;
@@ -357,10 +404,8 @@
   .button__code--small {
     height: 20px;
   }
-}
-@media screen and (min-width: 992px) {
-  .button {
-    margin-top: 2em;
+  .button__longtext {
+    margin-top: 15em;
   }
 }
 .card {

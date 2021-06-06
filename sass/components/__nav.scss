@@ -40,7 +40,7 @@
         background-color: white;
         display: grid;
         grid-template-rows: 25% 25% 25% 25%;
-        border: 2px solid #2628BA;
+        // border: 2px solid #2628BA;
         list-style-type: none;
         padding: 0;
         margin-top: 0;
@@ -104,6 +104,14 @@
         &__list {
             display: grid;
             grid-template-columns: 25% 25% 25% 25%;
+        }
+
+        &__item {
+            height: 25px;
+        }
+
+        &__item--active {
+            height: 25px;
         }
     }
 

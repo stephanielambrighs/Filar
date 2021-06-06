@@ -10,7 +10,7 @@
     margin-top: 0.5em;
     border: 2px solid #43CC7C;
 
-    &__longtext {
+    &__longtext, &__longtext--large, &__longtext--send {
         background-color: #43CC7C;
         padding: 1em 9em;
         text-align: center;
@@ -19,7 +19,7 @@
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-weight: 700;
         border-radius: 10px;
-        margin-top: 1.5em;
+        height: 20px;
         border: 2px solid #43CC7C;
     }
 
@@ -65,9 +65,11 @@
     }
 
     &__code--small {
-        padding: 1em 2em;
+        padding: 1em 1em;
         margin-left: 0;
-        width: 250px;
+        margin-top: 1em;
+        width: 280px;
+        height: 20px;
     }
 
     &__item--small {
@@ -81,14 +83,49 @@
 
 }
 
-.button:hover {
+.button:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__longtext:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__code:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__code--small:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__longtext--home:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__item:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__item--small:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__item--edit:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__longtext--send:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__longtext--large:hover {
     box-shadow: 1px 3px#2628BA;
 }
 
 
 @media screen and (min-width: 650px) {
     .button {
-        margin-top: 2em;
 
         &__code{
             display: block;
@@ -109,13 +146,17 @@
         &__code--small {
             height: 20px;
         }
+
+        &__longtext{
+            margin-top: 15em;
+        }
     }
 }
 
 
-@media screen and (min-width: 992px) {
-    .button {
-        margin-top: 2em;
-    }
+// @media screen and (min-width: 992px) {
+//     .button {
+//         margin-top: 2em;
+//     }
 
-}
+// }

@@ -28,10 +28,10 @@
     <input type="text" id="myInput" class="form-group__input" placeholder="********">
   </div>
   <div class="form-group__header">
-    <a href="#" class="button__longtext">
+    <a href="#" class="button__longtext--large">
         <span class="button__body">Registreer</span>
     </a>
-    <a href="#" class="form-group__link">Ik heb al een profiel</a>
+    <a href="login.php" class="form-group__link">Ik heb al een profiel</a>
   </div>
 </form>
 
