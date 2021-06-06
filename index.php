@@ -34,7 +34,11 @@
   <h1 class="card__title">Het verwerkingsproces</h1>
   <div class="card__header--switch--home">
         <figure class="card__figure--switch--home">
-        <img src="/images/12_Proces.png" alt="proces" class="card__image--proces1">
+            <img src="/images/12_Proces.png" alt="proces" class="card__image--proces1">
+        </figure>
+        <figure class="card__figure--switch--home--right">
+            <img src="/images/11_Pijl.png" alt="proces" class="card__image--proces">
+            De fijne vlokjes die hier uitkomen worden vervolgens in de een paar stappen verhit tot een vloeibaar materiaal dat wij dan tot filament kunnen vormen.
         </figure>
         <div class="card__body--switch--home">
             <p class="card__copy">
@@ -44,12 +48,12 @@
                 Om te beginnen worden de PET flessen grondig gereinigd en door een shredder gehaald. Dit kan je vergelijken met een soort van veel krachtigere variant van de blender die jij en ik thuis hebben staan.
                 </p>
             <p class="card__copy--proces">
-                <figure class="card__figure--switch--home">
+                <figure class="card__figure--switch--home2">
                     <img src="/images/11_Pijl.png" alt="proces" class="card__image--proces">
+                    De fijne vlokjes die hier uitkomen worden vervolgens in de een paar stappen verhit tot een vloeibaar materiaal dat wij dan tot filament kunnen vormen.
                 </figure>
-                De fijne vlokjes die hier uitkomen worden vervolgens in de een paar stappen verhit tot een vloeibaar materiaal dat wij dan tot filament kunnen vormen.
             </p>
-            <p class="card__copy">
+            <p class="card__copy--proces2">
                 <figure class="card__figure--switch--home">
                     <img src="/images/11_Pijl.png" alt="proces" class="card__image--proces">
                 </figure>
