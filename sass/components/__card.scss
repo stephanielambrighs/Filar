@@ -49,6 +49,11 @@
         color: #7E8498;
     }
 
+    &__body--switch--home {
+        margin-left: 1.5em;
+        color: #7E8498;
+    }
+
     &__subtitle__usecases{
         text-align: center;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -118,6 +123,7 @@
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         text-align: center;
         background-color: white;
+        padding-top: 1em;
     }
 
     &__body__shop{
@@ -283,6 +289,57 @@
         display: grid;
         grid-template-columns: 55px 10% 80%;
     }
+
+    &--home {
+        background-image: url(/images/14_HeaderBackground.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        padding-top: 1em;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding-bottom: 5em;
+    }
+
+
+    &__subtitle--home {
+        color: white;
+        font-size: 2em;
+
+    }
+
+    &__copy--home {
+        color: white;
+        margin-bottom: 3.5em;
+    }
+
+    &__image--home {
+        width: 350px;
+        margin-left: 1em;
+    }
+
+    &__image--proces1 {
+        width: 350px;
+        // margin-left: 1em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__image--proces {
+        display: none;
+    }
+
+    &__body--switch--vuilbak {
+        margin-top: 2em;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: #7E8498;
+        margin-left: 2em;
+    }
+
+    &__copy--vuilbak {
+        margin-bottom: 3em;
+    }
+
+
 }
 
 #mission {
@@ -316,6 +373,11 @@
             grid-template-columns: 50% 50%;
         }
 
+        &__header--switch--home {
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
         &__header--models {
             display: grid;
             grid-template-columns: 50% 50%;
@@ -330,6 +392,12 @@
         }
 
         &__figure--switch {
+            order: 2;
+            padding: 0;
+            margin-left: 1.8em;
+        }
+
+        &__figure--switch--home {
             order: 2;
             padding: 0;
             margin-left: 1.8em;
@@ -443,6 +511,42 @@
             margin-top: 5em;
         }
 
+        &--home {
+            background-image: url(/images/14_HeaderBackground.png);
+            background-size: 100% 80%;
+            padding-bottom: 15em;
+        }
+
+        &__subtitle--home {
+            font-size: 2.5em;
+            margin-top: 0;
+        }
+
+        &__image--home {
+            width: 300px;
+            margin-top: 5em;
+            margin-left: 1em;
+        }
+
+
+        &__image--proces1 {
+            width: 350px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &__image--proces {
+            display: block;
+            width: 300px;
+            margin-left: 1em;
+            margin-top: 8em;
+        }
+
+        &__body--switch--vuilbak {
+            margin-top: 5em;
+        }
+
     }
 
 }
@@ -473,9 +577,33 @@
             margin-left: 5em;
         }
 
+        &__body--switch--home {
+            order: 1;
+            margin-left: 5em;
+        }
+
+        // &__figure--switch--home {
+        //     display: grid;
+        //     order: 3;
+        // }
+
+        // &__copy--home {
+        //     // display: grid;
+        //     // position: absolute;
+        //     // width: 100px;
+        //     // left: 10px;
+        //     // top: 0px;
+        //     // z-index: 1;
+        // }
+
         &__header--switch {
             display: grid;
             grid-template-columns: 60% 40%;
+        }
+
+        &__header--switch--home {
+            display: grid;
+            grid-template-columns: 33% 35% 33%;
         }
 
         &__figure--switch {
@@ -538,6 +666,23 @@
         &__image--filament {
             width: 25em;
             height: 25em;
+        }
+
+        &--home {
+            background-image: url(/images/14_HeaderBackground.png);
+            background-size: 100% 80%;
+            padding-bottom: 15em;
+        }
+
+        &__image--home {
+            width: 500px;
+            margin-top: 0em;
+            margin-left: -8em;
+        }
+
+        &__body--switch--vuilbak {
+            margin-top: 8em;
+            margin-left: 5em;
         }
     }
 }

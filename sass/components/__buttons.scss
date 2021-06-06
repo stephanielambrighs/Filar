@@ -23,7 +23,7 @@
         border: 2px solid #43CC7C;
     }
 
-    &__code, &__code--small{
+    &__code, &__code--small, &__longtext--home{
         background-color: #43CC7C;
         padding: 1em 6em;
         text-align: center;
@@ -72,6 +72,11 @@
 
     &__item--small {
         margin-top: 2.5em;
+    }
+
+    &__longtext--home {
+        margin-top: 0;
+        margin-left: 0;
     }
 
 }
