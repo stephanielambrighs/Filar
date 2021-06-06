@@ -15,16 +15,16 @@
 <nav class="sub-nav" aria-label="sub">
   <ul class="sub-nav__list">
     <li class="sub-nav__item">
-      <a href="#" class="sub-nav__link">Plastic tracker</a>
+      <a href="plastic-tracker.php" class="sub-nav__link">Plastic tracker</a>
     </li>
     <li class="sub-nav__item--active">
-      <a href="#" class="sub-nav__link--active">Inlevergeschiedenis</a>
+      <a href="inlevergeschiedenis.php" class="sub-nav__link--active">Inlevergeschiedenis</a>
     </li>
     <li class="sub-nav__item">
-      <a href="#" class="sub-nav__link">Aankoopgeschiedenis</a>
+      <a href="aankoopgeschiedenis.php" class="sub-nav__link">Aankoopgeschiedenis</a>
     </li>
     <li class="sub-nav__item">
-      <a href="#" class="sub-nav__link">Profielinstellingen</a>
+      <a href="profielinstellingen.php" class="sub-nav__link">Profielinstellingen</a>
     </li>
   </ul>
 </nav>

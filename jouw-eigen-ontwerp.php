@@ -117,11 +117,11 @@
                 <input type="text" id="myInput" class="form__input" placeholder="Kies uw leveringsmethode">
             </div>
             <div class="form__header">
-                <label for="myInput" class="form__label">Bijkomende instructies</label>
+                <label for="myInput" class="form__label--textarea">Bijkomende instructies</label>
                 <textarea type="text" id="myTextarea" class="form__input" placeholder="Uw bijkomende instructies voor ons"></textarea>
             </div>
             <div class="form__header">
-                <a href="#" class="button__longtext">
+                <a href="#" class="button__longtext--send">
                     <span class="button__body">Versturen</span>
                 </a>
             </div>
