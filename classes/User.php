@@ -42,17 +42,17 @@ class User{
         `password`,`data_of_birth`,`street`,`city`,`province`,`country`,`plastic_tracker_id`,`personal_code`)
         values (:firstname, :lastname , :email, :password, :date_of_birth,
         :street, :city, :province, :country, :plastic_tracker_id, :personal_code)");
-        $statement->bindValue(':firstname', "John");
-        $statement->bindValue(':lastname', "Doe");
+        $statement->bindValue(':firstname', " ");
+        $statement->bindValue(':lastname', " ");
         $statement->bindValue(':email', $this->email);
         $statement->bindValue(':password', $password);
-        $statement->bindValue(':date_of_birth', "1995-06-08");
-        $statement->bindValue(':street', "Zandpoortvest");
-        $statement->bindValue(':city', "Mechelen");
-        $statement->bindValue(':province', "Antwerpen");
-        $statement->bindValue(':country', "Belgium");
+        $statement->bindValue(':date_of_birth', "1997-01-01");
+        $statement->bindValue(':street', " ");
+        $statement->bindValue(':city', " ");
+        $statement->bindValue(':province', " ");
+        $statement->bindValue(':country', " ");
         $statement->bindValue(':plastic_tracker_id', 1);
-        $statement->bindValue(':personal_code', "filar");
+        $statement->bindValue(':personal_code', " ");
         return $statement->execute();
     }
 
