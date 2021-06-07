@@ -1,3 +1,10 @@
+<?php
+  include_once(__DIR__ . "/classes/User.php");
+
+  $u = new User();
+  $purchases = $u->purchaseHistory();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,16 +21,16 @@
 <nav class="sub-nav" aria-label="sub">
   <ul class="sub-nav__list">
     <li class="sub-nav__item">
-      <a href="#" class="sub-nav__link">Plastic tracker</a>
+      <a href="plastic-tracker.php" class="sub-nav__link">Plastic tracker</a>
     </li>
     <li class="sub-nav__item">
-      <a href="#" class="sub-nav__link">Inlevergeschiedenis</a>
+      <a href="inlevergeschiedenis.php" class="sub-nav__link">Inlevergeschiedenis</a>
     </li>
     <li class="sub-nav__item--active">
-      <a href="#" class="sub-nav__link--active">Aankoopgeschiedenis</a>
+      <a href="aankoopgeschiedenis.php" class="sub-nav__link--active">Aankoopgeschiedenis</a>
     </li>
     <li class="sub-nav__item">
-      <a href="#" class="sub-nav__link">Profielinstellingen</a>
+      <a href="profielinstellingen.php" class="sub-nav__link">Profielinstellingen</a>
     </li>
   </ul>
 </nav>
@@ -37,20 +44,15 @@
     <th class="table__title">Aantal</th>
     <th class="table__title--item">Subtotaal</th>
   </tr>
+  <?php foreach($purchases as $p): ?>
   <tr class="table__item">
-    <td class="table__subtitle"><img class="table__image" src="/images/product_smartphone_houder.jpg" alt="smarthphone_houder"><span class="table__subtitle--product">Smartphone houder</span></td>
-    <td class="table__subtitle">05/03/2021</td>
-    <td class="table__subtitle">€15</td>
-    <td class="table__subtitle">1</td>
-    <td class="table__subtitle--item">€15</td>
+    <td class="table__subtitle"><img class="table__image" src="/images/product_smartphone_houder.jpg" alt="smarthphone_houder"><span class="table__subtitle--product"><?php echo $p["name"] ?></span></td>
+    <td class="table__subtitle"><?php echo $p["date"] ?></td>
+    <td class="table__subtitle">€<?php echo $p["price"] ?></td>
+    <td class="table__subtitle"><?php echo $p["quantity"] ?></td>
+    <td class="table__subtitle--item">€<?php echo $p["quantity"]*$p["price"] ?></td>
   </tr>
-  <tr class="table__item">
-    <td class="table__subtitle"><img class="table__image" src="/images/product_keycaps.jpg" alt="keycaps"><span class="table__subtitle--product">Keycaps</span></td>
-    <td class="table__subtitle">22/02/2021</td>
-    <td class="table__subtitle">€30</td>
-    <td class="table__subtitle">2</td>
-    <td class="table__subtitle--item">€60</td>
-  </tr>
+  <?php endforeach; ?>
 </table>
 
 <?php include_once("inc/footer.inc.php"); ?>
