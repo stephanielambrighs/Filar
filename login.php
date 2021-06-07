@@ -2,27 +2,27 @@
 
 require_once(__DIR__ . "/autoload.php");
 
-  if(!empty($_POST['email']) && !empty($_POST['password'])){
-      try {
-        $user = new User();
-        $user->setEmail($_POST['email']);
-        $user->setPassword($_POST['password']);
+if(!empty($_POST['email']) && !empty($_POST['password'])){
+    try {
+      $user = new User();
+      $user->setEmail($_POST['email']);
+      $user->setPassword($_POST['password']);
 
-        if($user->canLogin()){
-          session_start();
-          $_SESSION['email'] = $user;
-          header("Location: plastic-tracker.php");
-        }
-        else{
-          $error = true;
-        }
+      if($user->canLogin()){
+        session_start();
+        $_SESSION['email'] = $user;
+        header("Location: plastic-tracker.php");
       }
-      catch(Exception $e){
-        $error = $e->getMessage();
+      else{
         $error = true;
       }
+    }
+    catch(Exception $e){
+      $error = $e->getMessage();
+      $error = true;
+    }
 
-  }
+}
 
 
 
