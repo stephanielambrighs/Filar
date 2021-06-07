@@ -39,21 +39,37 @@ class User{
         $conn = Db::getConnection();
         $statement = $conn->prepare("
         insert into user(`firstname`, `lastname`, `email`,
-        `password`,`data_of_birth`,`street`,`city`,`province`,`country`,`plastic_tracker_id`,`personal_code`)
+        `password`,`date_of_birth`,`street`,`city`,`province`,`country`,`personal_code`)
         values (:firstname, :lastname , :email, :password, :date_of_birth,
-        :street, :city, :province, :country, :plastic_tracker_id, :personal_code)");
-        $statement->bindValue(':firstname', "John");
-        $statement->bindValue(':lastname', "Doe");
+        :street, :city, :province, :country, :personal_code)");
+        $statement->bindValue(':firstname', " ");
+        $statement->bindValue(':lastname', " ");
         $statement->bindValue(':email', $this->email);
         $statement->bindValue(':password', $password);
-        $statement->bindValue(':date_of_birth', "1995-06-08");
-        $statement->bindValue(':street', "Zandpoortvest");
-        $statement->bindValue(':city', "Mechelen");
-        $statement->bindValue(':province', "Antwerpen");
-        $statement->bindValue(':country', "Belgium");
-        $statement->bindValue(':plastic_tracker_id', 1);
-        $statement->bindValue(':personal_code', "filar");
-        return $statement->execute();
+        $statement->bindValue(':date_of_birth', "1997-01-01");
+        $statement->bindValue(':street', " ");
+        $statement->bindValue(':city', " ");
+        $statement->bindValue(':province', " ");
+        $statement->bindValue(':country', " ");
+        $statement->bindValue(':personal_code', " ");
+        $result = $statement->execute();
+        // var_dump($statement->errorInfo());
+        return $result;
+    }
+
+
+    public function canLogin() {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("select * from user where email = :email");
+        $statement->bindValue(":email", $this->email);
+        $statement->execute();
+        $dbUser = $statement->fetch();
+        $hash = $dbUser["password"];
+        if(password_verify($this->password, $hash)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 
