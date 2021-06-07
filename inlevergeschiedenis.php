@@ -1,23 +1,23 @@
 <?php
 
-require_once(__DIR__ . "/autoload.php");
+  include_once(__DIR__ . "/classes/User.php");
+  require_once(__DIR__ . "/autoload.php");
 
-session_start();
+  session_start();
 
-// if the session is not set then a redirect
-if(!isset($_SESSION['email'])){
-  header("Location: login.php");
-}else{
+  // if the session is not set then a redirect
+  if(!isset($_SESSION['email'])){
+    header("Location: login.php");
+  }else{
 
-// else do something in this page
+    // else do something in this page
+    $u = new User();
+    $deliveries = $u->deliveryHistory();
 
 }
 
-
-
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +28,6 @@ if(!isset($_SESSION['email'])){
     <title>Inlevergeschiedenis</title>
 </head>
 <body>
-
 
 <?php include_once("inc/nav.inc.php"); ?>
 
@@ -57,24 +56,14 @@ if(!isset($_SESSION['email'])){
     <th class="table__title">Datum</th>
     <th class="table__title--item">Bon ontvangen</th>
   </tr>
+  <?php foreach($deliveries as $d): ?>
   <tr class="table__item">
-    <td class="table__subtitle">5,3kg</td>
-    <td class="table__subtitle">Thuis ophalen</td>
-    <td class="table__subtitle">29/03/2021</td>
+    <td class="table__subtitle"><?php echo $d["delivered_plastic"] ?>kg</td>
+    <td class="table__subtitle"><?php echo $d["delivery_method"] ?></td>
+    <td class="table__subtitle"><?php echo $d["delivery_date"] ?></td>
     <td class="table__subtitle--item">Nog niet ontvangen</td>
   </tr>
-  <tr class="table__item">
-    <td class="table__subtitle">6,8kg</td>
-    <td class="table__subtitle">Thuis ophalen</td>
-    <td class="table__subtitle">15/03/2021</td>
-    <td class="table__subtitle--item">20/03/2021</td>
-  </tr>
-  <tr class="table__item">
-    <td class="table__subtitle">2,1kg</td>
-    <td class="table__subtitle">In de winkel leveren</td>
-    <td class="table__subtitle">27/02/2021</td>
-    <td class="table__subtitle--item">02/03/2021</td>
-  </tr>
+  <?php endforeach; ?>
 </table>
 
 <?php include_once("inc/footer.inc.php"); ?>

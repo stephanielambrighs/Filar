@@ -1,5 +1,6 @@
 <?php
 
+include_once(__DIR__ . "/classes/User.php");
 require_once(__DIR__ . "/autoload.php");
 
 session_start();
@@ -7,17 +8,16 @@ session_start();
 // if the session is not set then a redirect
 if(!isset($_SESSION['email'])){
   header("Location: login.php");
-}else{
+} else {
 
 // else do something in this page
+  $u = new User();
+  $purchases = $u->purchaseHistory();
 
 }
 
-
-
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,20 +57,15 @@ if(!isset($_SESSION['email'])){
     <th class="table__title">Aantal</th>
     <th class="table__title--item">Subtotaal</th>
   </tr>
+  <?php foreach($purchases as $p): ?>
   <tr class="table__item">
-    <td class="table__subtitle"><img class="table__image" src="/images/product_smartphone_houder.jpg" alt="smarthphone_houder"><span class="table__subtitle--product">Smartphone houder</span></td>
-    <td class="table__subtitle">05/03/2021</td>
-    <td class="table__subtitle">€15</td>
-    <td class="table__subtitle">1</td>
-    <td class="table__subtitle--item">€15</td>
+    <td class="table__subtitle"><img class="table__image" src="/images/product_smartphone_houder.jpg" alt="smarthphone_houder"><span class="table__subtitle--product"><?php echo $p["name"] ?></span></td>
+    <td class="table__subtitle"><?php echo $p["date"] ?></td>
+    <td class="table__subtitle">€<?php echo $p["price"] ?></td>
+    <td class="table__subtitle"><?php echo $p["quantity"] ?></td>
+    <td class="table__subtitle--item">€<?php echo $p["quantity"]*$p["price"] ?></td>
   </tr>
-  <tr class="table__item">
-    <td class="table__subtitle"><img class="table__image" src="/images/product_keycaps.jpg" alt="keycaps"><span class="table__subtitle--product">Keycaps</span></td>
-    <td class="table__subtitle">22/02/2021</td>
-    <td class="table__subtitle">€30</td>
-    <td class="table__subtitle">2</td>
-    <td class="table__subtitle--item">€60</td>
-  </tr>
+  <?php endforeach; ?>
 </table>
 
 <?php include_once("inc/footer.inc.php"); ?>

@@ -2,7 +2,6 @@
 
 require_once(__DIR__ . "/../autoload.php");
 
-
 class Db {
 
     private static $conn;
@@ -26,5 +25,3 @@ class Db {
         }
     }
 }
-
-?>
