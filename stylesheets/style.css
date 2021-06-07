@@ -348,7 +348,7 @@
   margin-left: 0;
 }
 .button__longtext--contact {
-  height: 25px;
+  height: 55px;
 }
 
 .button:hover {
@@ -414,6 +414,9 @@
   }
   .button__longtext, .button__longtext--contact {
     margin-top: 15em;
+  }
+  .button__longtext--contact {
+    margin-top: 18em;
   }
 }
 .card {

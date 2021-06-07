@@ -14,23 +14,26 @@
   <div class="card__header--models">
     <div class="card__form--split">
         <h1 class="card__title--split">Contacteer ons</h1>
-        <form class="form">
+        <form class="form" action="https://formsubmit.co/ellievision88@gmail.com" method="POST">
             <div class="form__header--first">
                 <label for="myInput" class="form__label">E-mailadres</label>
-                <input type="text" id="myInput" class="form__input" placeholder="john.doe@gmail.com">
+                <input type="email" name="email" class="form__input" placeholder="john.doe@gmail.com" required>
             </div>
             <div class="form__header--first">
                 <label for="myInput" class="form__label">Voor- en achternaam</label>
-                <input type="text" id="myInput" class="form__input" placeholder="John Doe">
+                <input type="text" name="name" class="form__input" placeholder="John Doe" required>
             </div>
             <div class="form__header--first">
                 <label for="myInput" class="form__label">Bericht</label>
-                <textarea type="text" id="myTextarea" class="form__input" placeholder="Uw bericht naar ons"></textarea>
+                <textarea type="text" name="message" id="myTextarea" class="form__input" placeholder="Uw bericht naar ons"></textarea>
             </div>
             <div class="form__header--first">
-                <a href="#" class="button__longtext--contact">
+                <input type="hidden" name="_captcha" value="false">
+                <!-- change page url -->
+                <input type="hidden" name="_next" value="http://localhost:8086/contact.php">
+                <button type="submit" href="#" class="button__longtext--contact">
                     <span class="button__body">Versturen</span>
-                </a>
+                </button>
             </div>
         </form>
     </div>

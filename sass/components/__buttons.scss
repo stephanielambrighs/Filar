@@ -83,7 +83,7 @@
     }
 
     &__longtext--contact {
-        height: 25px;
+        height: 55px;
     }
 
 }
@@ -158,6 +158,10 @@
 
         &__longtext, &__longtext--contact{
             margin-top: 15em;
+        }
+
+        &__longtext--contact {
+            margin-top: 18em;
         }
     }
 }
