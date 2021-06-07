@@ -45,17 +45,26 @@ if(!empty($_POST)){
 <form class="form-group" method="post">
   <h1 class="form-group__title">Registreer</h1>
   <div class="form-group__header">
+    <?php if(isset($inputError)): ?>
+      <div class="alert"><?php echo "Sorry, E-mailadres en wachtwoord moet ingevuld zijn"; ?></div>
+    <?php endif; ?>
+    <?php if(isset($error)): ?>
+      <div class="alert"><?php echo "Sorry, beide wachtwoorden moeten hetzelfde zijn"; ?></div>
+    <?php endif; ?>
+  </div>
+  <div class="form-group__header">
     <label for="myInput" class="form-group__label">E-mailadres</label>
-    <input name="email" type="text" id="myInput" class="form-group__input" placeholder="john.doe@gmail.com">
+    <input name="email" type="text" class="form-group__input" placeholder="john.doe@gmail.com">
   </div>
   <div class="form-group__header">
     <label for="myInput" class="form-group__label">Wachtwoord</label>
-    <input name="password" type="password" id="myInput" class="form-group__input" placeholder="********">
+    <input name="password" type="password" class="form-group__input" placeholder="********">
   </div>
   <div class="form-group__header">
     <label for="myInput" class="form-group__label">Wachtwoord bevestigen</label>
-    <input name="conform_password" type="password" id="myInput" class="form-group__input" placeholder="********">
+    <input name="conform_password" type="password" class="form-group__input" placeholder="********">
   </div>
+
   <div class="form-group__header">
     <button type="submit" href="#" class="button__longtext--large">
         <span class="button__body">Registreer</span>

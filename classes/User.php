@@ -39,9 +39,9 @@ class User{
         $conn = Db::getConnection();
         $statement = $conn->prepare("
         insert into user(`firstname`, `lastname`, `email`,
-        `password`,`data_of_birth`,`street`,`city`,`province`,`country`,`plastic_tracker_id`,`personal_code`)
+        `password`,`date_of_birth`,`street`,`city`,`province`,`country`,`personal_code`)
         values (:firstname, :lastname , :email, :password, :date_of_birth,
-        :street, :city, :province, :country, :plastic_tracker_id, :personal_code)");
+        :street, :city, :province, :country, :personal_code)");
         $statement->bindValue(':firstname', " ");
         $statement->bindValue(':lastname', " ");
         $statement->bindValue(':email', $this->email);
@@ -51,9 +51,10 @@ class User{
         $statement->bindValue(':city', " ");
         $statement->bindValue(':province', " ");
         $statement->bindValue(':country', " ");
-        $statement->bindValue(':plastic_tracker_id', 1);
         $statement->bindValue(':personal_code', " ");
-        return $statement->execute();
+        $result = $statement->execute();
+        // var_dump($statement->errorInfo());
+        return $result;
     }
 
 
