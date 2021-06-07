@@ -87,43 +87,44 @@
         eventuele bijkomende vragen stellen of gewoonweg de nodige informatie doorgeven zoals
         de prijs en wanneer de print klaar zal zijn.
         </p>
-        <form class="form">
+        <form class="form" action="https://formsubmit.co/ellievision88@gmail.com" method="POST">
             <div class="form__header--first">
                 <label for="myInput" class="form__label">E-mailadres</label>
-                <input type="text" id="myInput" class="form__input" placeholder="john.doe@gmail.com">
+                <input name="email" type="text" class="form__input" placeholder="john.doe@gmail.com">
             </div>
             <div class="form__header--first">
                 <label for="myInput" class="form__label">Voor- en achternaam</label>
-                <input type="text" id="myInput" class="form__input" placeholder="John Doe">
+                <input name="name" type="text" class="form__input" placeholder="John Doe">
             </div>
             <div class="form__header--first">
                 <label for="myInput" class="form__label">ZIP bestand</label>
-                <input type="file" id="myInput" class="form__input" placeholder="model.zip">
+                <input name="file" type="file" class="form__input" placeholder="model.zip">
             </div>
             <div class="form__header--first">
                 <label for="myInput" class="form__label">Groote in cm (maximum 25)</label>
-                <input type="text" id="myInput" class="form__input" placeholder="20">
+                <input name="size" type="text" class="form__input" placeholder="20">
             </div>
-        </form>
     </div>
     <div class="card__form">
-        <form class="form">
             <div class="form__header">
                 <label for="myInput" class="form__label">Kleur</label>
-                <input type="text" id="myInput" class="form__input" placeholder="Kies uw kleur">
+                <input name="color" type="text" class="form__input" placeholder="Kies uw kleur">
             </div>
             <div class="form__header">
                 <label for="myInput" class="form__label">Leveringsmethode</label>
-                <input type="text" id="myInput" class="form__input" placeholder="Kies uw leveringsmethode">
+                <input name="leveringsmethode" type="text" id="myInput" class="form__input" placeholder="Kies uw leveringsmethode">
             </div>
             <div class="form__header">
                 <label for="myInput" class="form__label--textarea">Bijkomende instructies</label>
-                <textarea type="text" id="myTextarea" class="form__input" placeholder="Uw bijkomende instructies voor ons"></textarea>
+                <textarea name="instructies" type="text" id="myTextarea" class="form__input" placeholder="Uw bijkomende instructies voor ons"></textarea>
             </div>
             <div class="form__header">
-                <a href="#" class="button__longtext--send">
+                <input type="hidden" name="_captcha" value="false">
+                <!-- change page url -->
+                <input type="hidden" name="_next" value="http://localhost:8086/jouw-eigen-ontwerp.php">
+                <button type="submit" href="#" class="button__longtext--send">
                     <span class="button__body">Versturen</span>
-                </a>
+                </button>
             </div>
         </form>
     </div>
