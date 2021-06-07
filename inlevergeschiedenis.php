@@ -1,3 +1,10 @@
+<?php
+  include_once(__DIR__ . "/classes/User.php");
+
+  $u = new User();
+  $deliveries = $u->deliveryHistory();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,22 +16,21 @@
 </head>
 <body>
 
-
 <?php include_once("inc/nav.inc.php"); ?>
 
 <nav class="sub-nav" aria-label="sub">
   <ul class="sub-nav__list">
     <li class="sub-nav__item">
-      <a href="#" class="sub-nav__link">Plastic tracker</a>
+      <a href="plastic-tracker.php" class="sub-nav__link">Plastic tracker</a>
     </li>
     <li class="sub-nav__item--active">
-      <a href="#" class="sub-nav__link--active">Inlevergeschiedenis</a>
+      <a href="inlevergeschiedenis.php" class="sub-nav__link--active">Inlevergeschiedenis</a>
     </li>
     <li class="sub-nav__item">
-      <a href="#" class="sub-nav__link">Aankoopgeschiedenis</a>
+      <a href="aankoopgeschiedenis.php" class="sub-nav__link">Aankoopgeschiedenis</a>
     </li>
     <li class="sub-nav__item">
-      <a href="#" class="sub-nav__link">Profielinstellingen</a>
+      <a href="profielinstellingen.php" class="sub-nav__link">Profielinstellingen</a>
     </li>
   </ul>
 </nav>
@@ -37,24 +43,14 @@
     <th class="table__title">Datum</th>
     <th class="table__title--item">Bon ontvangen</th>
   </tr>
+  <?php foreach($deliveries as $d): ?>
   <tr class="table__item">
-    <td class="table__subtitle">5,3kg</td>
-    <td class="table__subtitle">Thuis ophalen</td>
-    <td class="table__subtitle">29/03/2021</td>
+    <td class="table__subtitle"><?php echo $d["delivered_plastic"] ?>kg</td>
+    <td class="table__subtitle"><?php echo $d["delivery_method"] ?></td>
+    <td class="table__subtitle"><?php echo $d["delivery_date"] ?></td>
     <td class="table__subtitle--item">Nog niet ontvangen</td>
   </tr>
-  <tr class="table__item">
-    <td class="table__subtitle">6,8kg</td>
-    <td class="table__subtitle">Thuis ophalen</td>
-    <td class="table__subtitle">15/03/2021</td>
-    <td class="table__subtitle--item">20/03/2021</td>
-  </tr>
-  <tr class="table__item">
-    <td class="table__subtitle">2,1kg</td>
-    <td class="table__subtitle">In de winkel leveren</td>
-    <td class="table__subtitle">27/02/2021</td>
-    <td class="table__subtitle--item">02/03/2021</td>
-  </tr>
+  <?php endforeach; ?>
 </table>
 
 <?php include_once("inc/footer.inc.php"); ?>
