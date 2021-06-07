@@ -19,7 +19,7 @@ require_once(__DIR__ . "/autoload.php");
       }
       catch(Exception $e){
         $error = $e->getMessage();
-        $error = '<p>The password must be 5 characters long </p>';
+        $error = true;
       }
 
   }
@@ -40,9 +40,13 @@ require_once(__DIR__ . "/autoload.php");
 <?php include_once("inc/nav.inc.php"); ?>
 
 
-
 <form class="form-group" method="post">
   <h1 class="form-group__title">Log in</h1>
+  <div class="form-group__header">
+    <?php if(isset($error)): ?>
+      <div class="alert"><?php echo "Sorry, de inloggegevens zijn niet correct"; ?></div>
+    <?php endif; ?>
+  </div>
   <div class="form-group__header">
     <label for="myInput" class="form-group__label">E-mailadres</label>
     <input name="email" type="text" id="myInput" class="form-group__input" placeholder="john.doe@gmail.com">
