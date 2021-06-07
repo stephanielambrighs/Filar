@@ -10,7 +10,7 @@
     margin-top: 0.5em;
     border: 2px solid #43CC7C;
 
-    &__longtext, &__longtext--large, &__longtext--send {
+    &__longtext, &__longtext--large, &__longtext--send, &__longtext--contact {
         background-color: #43CC7C;
         padding: 1em 9em;
         text-align: center;
@@ -82,6 +82,10 @@
         margin-left: 0;
     }
 
+    &__longtext--contact {
+        height: 55px;
+    }
+
 }
 
 .button:hover{
@@ -124,6 +128,10 @@
     box-shadow: 1px 3px#2628BA;
 }
 
+.button__longtext--contact:hover {
+    box-shadow: 1px 3px#2628BA;
+}
+
 
 @media screen and (min-width: 650px) {
     .button {
@@ -148,8 +156,12 @@
             height: 20px;
         }
 
-        &__longtext{
+        &__longtext, &__longtext--contact{
             margin-top: 15em;
+        }
+
+        &__longtext--contact {
+            margin-top: 18em;
         }
     }
 }
