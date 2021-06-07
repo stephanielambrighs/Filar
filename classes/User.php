@@ -46,7 +46,7 @@ class User{
         $statement->bindValue(':lastname', " ");
         $statement->bindValue(':email', $this->email);
         $statement->bindValue(':password', $password);
-        $statement->bindValue(':date_of_birth', "1997-01-01");
+        $statement->bindValue(':date_of_birth', NULL);
         $statement->bindValue(':street', " ");
         $statement->bindValue(':city', " ");
         $statement->bindValue(':province', " ");
