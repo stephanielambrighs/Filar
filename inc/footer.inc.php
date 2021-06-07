@@ -1,11 +1,13 @@
 <footer class="footer">
-    <p class="footer--copyright">Copyright Filar 2021</p>
     <ul class="footer__list">
         <li class="footer__item">
-            <a href="#" class="footer__link"><img src="#" alt="facebook"></a>
+            Copyright Filar 2021
         </li>
         <li class="footer__item">
-            <a href="#" class="footer__link"><img src="#" alt="instagram"></a>
+            <a href="#" class="footer__link"><img class="footer__icons" src="/images/9_Facebook.png" alt="facebook"></a>
+        </li>
+        <li class="footer__item">
+            <a href="#" class="footer__link"><img class="footer__icons" src="/images/10_Instagram.png" alt="instagram"></a>
         </li>
     </ul>
 </footer>

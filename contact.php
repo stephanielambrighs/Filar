@@ -14,30 +14,36 @@
   <div class="card__header--models">
     <div class="card__form--split">
         <h1 class="card__title--split">Contacteer ons</h1>
-        <form class="form">
+        <form class="form" action="https://formsubmit.co/ellievision88@gmail.com" method="POST">
             <div class="form__header--first">
                 <label for="myInput" class="form__label">E-mailadres</label>
-                <input type="text" id="myInput" class="form__input" placeholder="john.doe@gmail.com">
+                <input type="email" name="email" class="form__input" placeholder="john.doe@gmail.com" required>
             </div>
             <div class="form__header--first">
                 <label for="myInput" class="form__label">Voor- en achternaam</label>
-                <input type="text" id="myInput" class="form__input" placeholder="John Doe">
+                <input type="text" name="name" class="form__input" placeholder="John Doe" required>
             </div>
             <div class="form__header--first">
                 <label for="myInput" class="form__label">Bericht</label>
-                <textarea type="text" id="myTextarea" class="form__input" placeholder="Uw bericht naar ons"></textarea>
+                <textarea type="text" name="message" id="myTextarea" class="form__input" placeholder="Uw bericht naar ons"></textarea>
             </div>
             <div class="form__header--first">
-                <a href="#" class="button__longtext">
+                <input type="hidden" name="_captcha" value="false">
+                <!-- change page url -->
+                <input type="hidden" name="_next" value="http://localhost:8086/contact.php">
+                <button type="submit" href="#" class="button__longtext--contact">
                     <span class="button__body">Versturen</span>
-                </a>
+                </button>
             </div>
         </form>
     </div>
     <div class="card__form--split">
         <h1 class="card__title--split">Bezoek onze winkel</h1>
         <figure class="card__figure">
-            <img src="/images/6_OnzeMissie.png" alt="onze_missie" class="card__image">
+            <iframe id="maps"
+                src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Zandpoortvest%2060%2CMechelen%2CBelgium+(Filar)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0" margin="auto">
+            </iframe>
         </figure>
         <div class="card__body--models">
             <p class="card__copy">

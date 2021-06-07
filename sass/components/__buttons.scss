@@ -10,7 +10,7 @@
     margin-top: 0.5em;
     border: 2px solid #43CC7C;
 
-    &__longtext {
+    &__longtext, &__longtext--large, &__longtext--send, &__longtext--contact {
         background-color: #43CC7C;
         padding: 1em 9em;
         text-align: center;
@@ -19,11 +19,12 @@
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-weight: 700;
         border-radius: 10px;
-        margin-top: 1.5em;
+        margin-top: 1em;
+        height: 50px;
         border: 2px solid #43CC7C;
     }
 
-    &__code{
+    &__code, &__code--small, &__longtext--home{
         background-color: #43CC7C;
         padding: 1em 6em;
         text-align: center;
@@ -37,7 +38,7 @@
         border: 2px solid #43CC7C;
     }
 
-    &__item{
+    &__item, &__item--small, &__item--edit{
         background-color: #43CC7C;
         padding: 1.1em 0em;
         text-align: center;
@@ -52,29 +53,123 @@
         width: 300px;
     }
 
+    &__item--small, &__item--edit {
+        padding: 0.5em;
+        border-radius: 5px;
+        font-size: 0.8em;
+        height: 20px;
+    }
+
+    &__item--edit {
+        background-color: white;
+        color: #43CC7C;
+    }
+
+    &__code--small {
+        padding: 1em 1em;
+        margin-left: 0;
+        margin-top: 1em;
+        width: 280px;
+        height: 20px;
+    }
+
+    &__item--small {
+        margin-top: 2.5em;
+    }
+
+    &__longtext--home {
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    &__longtext--contact {
+        height: 55px;
+    }
+
 }
 
-.button:hover {
+.button:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__longtext:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__code:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__code--small:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__longtext--home:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__item:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__item--small:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__item--edit:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__longtext--send:hover{
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__longtext--large:hover {
+    box-shadow: 1px 3px#2628BA;
+}
+
+.button__longtext--contact:hover {
     box-shadow: 1px 3px#2628BA;
 }
 
 
 @media screen and (min-width: 650px) {
     .button {
-        margin-top: 2em;
 
         &__code{
             display: block;
             margin-left: auto;
             margin-right: auto;
         }
+
+        &__item--small, &__item--edit {
+            padding: 0.5em;
+            border-radius: 5px;
+            font-size: 0.8em;
+        }
+
+        &__item--edit {
+            height: 20px;
+        }
+
+        &__code--small {
+            height: 20px;
+        }
+
+        &__longtext, &__longtext--contact{
+            margin-top: 15em;
+        }
+
+        &__longtext--contact {
+            margin-top: 18em;
+        }
     }
 }
 
 
-@media screen and (min-width: 992px) {
-    .button {
-        margin-top: 2em;
-    }
+// @media screen and (min-width: 992px) {
+//     .button {
+//         margin-top: 2em;
+//     }
 
-}
+// }

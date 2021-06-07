@@ -56,7 +56,6 @@
                 <a href="#" id="subtract"><img class="card__img--second" src="/images/arrow_icon.png"></a>
                 <!-- </div> -->
             </div>
-
             <a href="#" class="button__item">
                 <span class="button__body">Toevoegen aan winkelmand</span>
             </a>
