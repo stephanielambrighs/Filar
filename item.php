@@ -1,3 +1,18 @@
+<?php
+    include_once(__DIR__ . "/classes/User.php");
+    
+    $s = new Shop();
+    $key = $_GET["item"];
+
+    $print_details = $s->productDetails($key);
+
+    if(!empty($_POST["submitItem"])){
+        $quantity = $_POST["quantity"];
+        $s->getItemData($key);
+        $s->addToCart($quantity, 1, $key);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +24,7 @@
 </head>
 <body>
 
-
 <?php include_once("inc/nav.inc.php"); ?>
-
 
 <article class="card">
   <div class="card__header">
@@ -19,15 +32,8 @@
         <img src="/images/product_smartphone_houder.jpg" alt="print_smarthphone" class="card__image--item">
     </figure>
     <div class="card__body--item">
-        <h1 class="card__subtitle--item">Smartphone houder</h1>
-        <p class="card__copy">
-        We leven in een digitale wereld en deze smartphone houder is de perfecte accesoire voor jouw digitale levensstijl.
-        Is de batterij van jouw laptop leeg en heb je zin om de nieuwste aflevering van jouw favoriete serie te kijken
-        tijdens het avondeten?
-        Gebruik deze stevige en minimalistische houder in plaats van jouw smartphone ongemakkelijk tegen een pot of doos aan te leunen.
-        Daarbovenop is de houder zelfs sterk genoeg om kleine tablets overeind te houden,
-        dus kan je op verschillende schermgroottes genieten van jouw content.
-        </p>
+        <h1 class="card__subtitle--item"><?php echo $print_details[0]["name"] ?></h1>
+        <p class="card__copy"><?php echo $print_details[0]["description"] ?></p>
         <h3 class="card__subtitle--item">Specificaties</h3>
         <ul>
             <li>Gemaakt van 100% gerecycleerd PETG</li>
@@ -40,21 +46,23 @@
             <li>4 cm breed</li>
             <li>6 cm diep</li>
         </ul>
-        <div class="card__body__block">
+        <form class="card__body__block" action="" method="POST">
             <div class="card__count">
-                <span>1</span>
+                <input id="quantity" type="text" name="quantity" value="1">
             </div>
             <div class="card__arrow--first">
-                <a href="#"><img class="card__img--first" src="/images/arrow_icon.png"></a>
+                <a href="#" id="add"><img class="card__img--first" src="/images/arrow_icon.png"></a>
                 <!-- <div class="card__arrow--second"> -->
-                <a href="#"><img class="card__img--second" src="/images/arrow_icon.png"></a>
+                <a href="#" id="subtract"><img class="card__img--second" src="/images/arrow_icon.png"></a>
                 <!-- </div> -->
             </div>
 
             <a href="#" class="button__item">
                 <span class="button__body">Toevoegen aan winkelmand</span>
             </a>
-        </div>
+            
+                <input type="submit" name="submitItem">
+        </form>
     </div>
   </div>
 </article>
@@ -107,9 +115,31 @@
   </div>
 </article>
 
-
 <?php include_once("inc/footer.inc.php"); ?>
 
+<script>
+    let quantity = document.getElementById("quantity");
+    let counter = parseInt(quantity.value);
+    let add = document.getElementById("add");
+    let subtract = document.getElementById("subtract");
+
+    add.addEventListener("click", function(e){
+        e.preventDefault();
+        counter++;
+        quantity.value = counter;
+        console.log(counter);
+    });
+    
+    subtract.addEventListener("click", function(e){
+        e.preventDefault();
+        if(counter>=2){
+            counter--;
+            quantity.value = counter;
+            console.log(counter);
+        }
+    });
+    
+</script>
 
 </body>
 </html>
