@@ -114,7 +114,7 @@ if(!isset($_SESSION['id'])){
         <a id="update" type="submit" href="#" class="list__link">Update persoonlijke details</a>
     </form>
 
-  <ul class="list--second">
+  <ul id="showAdressDetails" class="list--second">
     <div class="list__second">
         <h2 class="list__subtitle">Adres details</h2>
         <li class="list__item">Straat
@@ -137,7 +137,34 @@ if(!isset($_SESSION['id'])){
                 <li class="list__item__second"><?php echo $user['country'];?>
             </ul>
         </li>
-        <a href="#" class="list__link">Adres details bijwerken</a>
+        <a id="editAdress" href="#" class="list__link">Adres details bijwerken</a>
+    </div>
+  </ul>
+
+  <form id="editAdressDetails" method="POST" class="list--second">
+    <div class="list__second">
+        <h2 class="list__subtitle">Adres details</h2>
+        <li class="list__item">Straat
+            <ul class="list__second">
+                <li class="list__item__second"><input id="street" type="text" name="street" placeholder="Zandpoortvest 60">
+            </ul>
+        </li>
+        <li class="list__item">Gemeente
+            <ul class="list__second">
+                <li class="list__item__second"><input id="city" type="text" name="city" placeholder="Mechelen">
+            </ul>
+        </li>
+        <li class="list__item">Provincie
+            <ul class="list__second">
+                <li class="list__item__second"><input id="province" type="text" name="province" placeholder="Antwerpen">
+            </ul>
+        </li>
+        <li class="list__item">Land
+            <ul class="list__second">
+                <li class="list__item__second"><input id="country" type="text" name="country" placeholder="Belgium">
+            </ul>
+        </li>
+        <a id="updateAdress" type="submit" href="#" class="list__link">Update adres details</a>
     </div>
   </ul>
 

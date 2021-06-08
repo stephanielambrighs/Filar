@@ -11,6 +11,10 @@ class User
     private $date_of_birth;
     private $email;
     private $password;
+    private $street;
+    private $city;
+    private $province;
+    private $country;
 
     //----------PLASTIC TRACKER----------
 
@@ -161,6 +165,86 @@ class User
         return $this;
     }
 
+    /**
+     * Get the value of street
+     */
+    public function getStreet()
+    {
+        return $this->street;
+    }
+
+    /**
+     * Set the value of street
+     *
+     * @return  self
+     */
+    public function setStreet($street)
+    {
+        $this->street = $street;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of city
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set the value of city
+     *
+     * @return  self
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of province
+     */
+    public function getProvince()
+    {
+        return $this->province;
+    }
+
+    /**
+     * Set the value of province
+     *
+     * @return  self
+     */
+    public function setProvince($province)
+    {
+        $this->province = $province;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of country
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Set the value of country
+     *
+     * @return  self
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
     public function register() {
         $options = [
             'cost' => 15
@@ -206,16 +290,6 @@ class User
         }
     }
 
-    // public function getUserId(){
-    //     $conn = Db::getConnection();
-    //     $statement = $conn->prepare("select id from user where id = :id");
-    //     $statement->bindValue(":id", $this->getId());
-    //     $result = $statement->execute();
-    //     // $result = $statement->fetch(PDO::FETCH_ASSOC);
-    //     // var_dump($result);
-    //     return $result;
-    // }
-
     // load the profiel details for the user
     public static function loadProfile($email) {
         $conn = Db::getConnection();
@@ -244,14 +318,32 @@ class User
         $statement->bindValue(':firstname', $this->getFirstname());
         $statement->bindValue(':lastname', $this->getLastname());
         $statement->bindValue(':date_of_birth', $this->getDate_of_birth());
-        // $statement->bindValue(':email', $this->getEmail());
         $statement->bindValue(':password', $password);
         $statement->bindValue(':userid', $userId);
         $result = $statement->execute();
-        var_dump($statement->errorInfo());
+        // var_dump($statement->errorInfo());
         return $result;
     }
 
+
+    public function updateAdress($userId){
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("UPDATE user
+        SET street = :street,
+        city = :city,
+        province = :province,
+        country = :country
+        WHERE id = :userid;");
+
+        $statement->bindValue(':street', $this->getStreet());
+        $statement->bindValue(':city', $this->getCity());
+        $statement->bindValue(':province', $this->getProvince());
+        $statement->bindValue(':country', $this->getCountry());
+        $statement->bindValue(':userid', $userId);
+        $result = $statement->execute();
+        // var_dump($statement->errorInfo());
+        return $result;
+    }
 
 
 
