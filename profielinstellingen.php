@@ -146,22 +146,22 @@ if(!isset($_SESSION['id'])){
         <h2 class="list__subtitle">Adres details</h2>
         <li class="list__item">Straat
             <ul class="list__second">
-                <li class="list__item__second"><input id="street" type="text" name="street" placeholder="Zandpoortvest 60">
+                <li class="list__item__second"><input id="street" type="text" name="street" placeholder="Zandpoortvest 60" required>
             </ul>
         </li>
         <li class="list__item">Gemeente
             <ul class="list__second">
-                <li class="list__item__second"><input id="city" type="text" name="city" placeholder="Mechelen">
+                <li class="list__item__second"><input id="city" type="text" name="city" placeholder="Mechelen" required>
             </ul>
         </li>
         <li class="list__item">Provincie
             <ul class="list__second">
-                <li class="list__item__second"><input id="province" type="text" name="province" placeholder="Antwerpen">
+                <li class="list__item__second"><input id="province" type="text" name="province" placeholder="Antwerpen" required>
             </ul>
         </li>
         <li class="list__item">Land
             <ul class="list__second">
-                <li class="list__item__second"><input id="country" type="text" name="country" placeholder="Belgium">
+                <li class="list__item__second"><input id="country" type="text" name="country" placeholder="Belgium" required>
             </ul>
         </li>
         <a id="updateAdress" type="submit" href="#" class="list__link">Update adres details</a>
