@@ -4,7 +4,10 @@ include_once(__DIR__ . "/Db.php");
 
 
 class User
-{   
+{
+    private $email;
+    private $password;
+
     //----------PLASTIC TRACKER----------
 
     public function allDelivered(){
@@ -51,9 +54,6 @@ class User
         return $result;
     }
 
-
-    private $email;
-    private $password;
 
     public function getEmail()
     {
@@ -119,5 +119,15 @@ class User
         }else{
             return false;
         }
+    }
+
+    // load the profiel details for the user
+    public static function loadProfile ($email) {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("select * from user where email = :email");
+        $statement->bindValue(':email', $email);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
     }
 }

@@ -9,8 +9,10 @@ if(!isset($_SESSION['email'])){
   header("Location: login.php");
 }else{
 
-// else do something in this page
-
+    // else do something in this page
+    $sessionUser = $_SESSION['email'];
+    $userEmail = $sessionUser->getEmail();
+    $user = User::loadProfile($userEmail);
 }
 
 
@@ -55,22 +57,22 @@ if(!isset($_SESSION['email'])){
         <h2 class="list__subtitle">Persoonlijke details</h2>
         <li class="list__item">Voornaam
             <ul class="list__second">
-                <li class="list__item__second">John
+                <li class="list__item__second"><?php echo $user['firstname'];?>
             </ul>
         </li>
         <li class="list__item">Achternaam
             <ul class="list__second">
-                <li class="list__item__second">Doe
+                <li class="list__item__second"><?php echo $user['lastname'];?>
             </ul>
         </li>
         <li class="list__item">Geboortedatum
             <ul class="list__second">
-                <li class="list__item__second">01/01/1997
+                <li class="list__item__second"><?php echo $user['date_of_birth'];?>
             </ul>
         </li>
         <li class="list__item">E-mailadres
             <ul class="list__second">
-                <li class="list__item__second">john@doe.com
+                <li class="list__item__second"><?php echo $user['email'];?>
             </ul>
         </li>
         <li class="list__item">Wachtwoord
@@ -86,22 +88,22 @@ if(!isset($_SESSION['email'])){
         <h2 class="list__subtitle">Adres details</h2>
         <li class="list__item">Straat
             <ul class="list__second">
-                <li class="list__item__second">Fakerstraat 99
+                <li class="list__item__second"><?php echo $user['street'];?>
             </ul>
         </li>
         <li class="list__item">Gemeente
             <ul class="list__second">
-                <li class="list__item__second">Faketown
+                <li class="list__item__second"><?php echo $user['city'];?>
             </ul>
         </li>
         <li class="list__item">Provincie
             <ul class="list__second">
-                <li class="list__item__second">Fakerton
+                <li class="list__item__second"><?php echo $user['province'];?>
             </ul>
         </li>
         <li class="list__item">Land
             <ul class="list__second">
-                <li class="list__item__second">Fakeland
+                <li class="list__item__second"><?php echo $user['country'];?>
             </ul>
         </li>
         <a href="#" class="list__link">Adres details bijwerken</a>
