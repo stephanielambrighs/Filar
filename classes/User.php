@@ -346,5 +346,15 @@ class User
     }
 
 
+    public static function getProfileDetails($user_id) {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("select * from user where id = :id");
+        $statement->bindValue(':id', $user_id);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        // var_dump($result);
+        return $result;
+    }
+
 
 }

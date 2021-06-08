@@ -35,7 +35,8 @@ editProfileButton.addEventListener("click", function(e){
         showProfile.style.display = "none";
         editFormProfile.style.display = "grid";
         show = false;
-
+        // function get variable out of the database
+        getProfileOutOfDatabase();
     }
     e.preventDefault();
 })
@@ -63,7 +64,8 @@ editAdressButton.addEventListener("click", function(e){
         showAdress.style.display = "none";
         editFormAdress.style.display = "grid";
         show = false;
-
+        // function get variable out of the database
+        getAddressOutOfDatabase();
     }
     e.preventDefault();
 })
@@ -130,6 +132,71 @@ function updateAdressSettings(){
     .then(response => response.json())
     .then(data => {
         console.log("Success: ", data);
+    })
+    .catch((error) => {
+        console.log("Error: ", error);
+    })
+}
+
+
+function getAddressOutOfDatabase() {
+    let street = document.getElementById("street");
+    let city = document.getElementById("city");
+    let province = document.getElementById("province");
+    let country = document.getElementById("country");
+    myBody = new FormData();
+    myBody.append("userId", userId);
+    myBody.append("street", street);
+    myBody.append("city", city);
+    myBody.append("province", province);
+    myBody.append("country", country);
+
+    fetch("ajax/getDetailsOutOfDb.php", {
+        method: "POST",
+        body: myBody,
+    })
+    .then(response => response.json())
+    // .then(response => response.text())
+    .then(data => {
+        console.log("Success: ", data);
+
+        street.value = data['data']['street'];
+        city.value = data['data']['city'];
+        province.value = data['data']['province'];
+        country.value = data['data']['country'];
+
+    })
+    .catch((error) => {
+        console.log("Error: ", error);
+    })
+}
+
+
+function getProfileOutOfDatabase(){
+    let firstname = document.getElementById("firstname");
+    let lastname = document.getElementById("lastname");
+    let date_of_birth = document.getElementById("date_of_birth");
+    let password = document.getElementById("password");
+    myBody = new FormData();
+    myBody.append("userId", userId);
+    myBody.append("firstname", firstname);
+    myBody.append("lastname", lastname);
+    myBody.append("date_of_birth", date_of_birth);
+    myBody.append("password", password);
+
+    fetch("ajax/getDetailsOutOfDb.php", {
+        method: "POST",
+        body: myBody,
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Success: ", data);
+
+        firstname.value = data['data']['firstname'];
+        lastname.value = data['data']['lastname'];
+        date_of_birth.value = data['data']['date_of_birth'];
+        // password.value = data['data']['password'];
+
     })
     .catch((error) => {
         console.log("Error: ", error);
