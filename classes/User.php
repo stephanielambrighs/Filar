@@ -5,6 +5,10 @@ include_once(__DIR__ . "/Db.php");
 
 class User
 {
+    private $id;
+    private $firstname;
+    private $lastname;
+    private $date_of_birth;
     private $email;
     private $password;
 
@@ -54,6 +58,84 @@ class User
         return $result;
     }
 
+     /**
+     * Get the value of id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+    /**
+     * Get the value of firstname
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set the value of firstname
+     *
+     * @return  self
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of lastname
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * Set the value of lastname
+     *
+     * @return  self
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of date_of_birth
+     */
+    public function getDate_of_birth()
+    {
+        return $this->date_of_birth;
+    }
+
+    /**
+     * Set the value of date_of_birth
+     *
+     * @return  self
+     */
+    public function setDate_of_birth($date_of_birth)
+    {
+        $this->date_of_birth = $date_of_birth;
+
+        return $this;
+    }
 
     public function getEmail()
     {
@@ -95,7 +177,7 @@ class User
         $statement->bindValue(':lastname', " ");
         $statement->bindValue(':email', $this->email);
         $statement->bindValue(':password', $password);
-        $statement->bindValue(':date_of_birth', NULL);
+        $statement->bindValue(':date_of_birth', "2000-01-01");
         $statement->bindValue(':street', " ");
         $statement->bindValue(':city', " ");
         $statement->bindValue(':province', " ");
@@ -110,10 +192,13 @@ class User
     public function canLogin() {
         $conn = Db::getConnection();
         $statement = $conn->prepare("select * from user where email = :email");
-        $statement->bindValue(":email", $this->email);
+        $statement->bindValue(":email", $this->getEmail());
         $statement->execute();
+        // var_dump($result);
         $dbUser = $statement->fetch();
+
         $hash = $dbUser["password"];
+
         if(password_verify($this->password, $hash)){
             return true;
         }else{
@@ -121,8 +206,18 @@ class User
         }
     }
 
+    // public function getUserId(){
+    //     $conn = Db::getConnection();
+    //     $statement = $conn->prepare("select id from user where id = :id");
+    //     $statement->bindValue(":id", $this->getId());
+    //     $result = $statement->execute();
+    //     // $result = $statement->fetch(PDO::FETCH_ASSOC);
+    //     // var_dump($result);
+    //     return $result;
+    // }
+
     // load the profiel details for the user
-    public static function loadProfile ($email) {
+    public static function loadProfile($email) {
         $conn = Db::getConnection();
         $statement = $conn->prepare("select * from user where email = :email");
         $statement->bindValue(':email', $email);
@@ -130,4 +225,34 @@ class User
         $result = $statement->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
+
+
+    public function updateProfile($userId){
+        $options = [
+            'cost' => 15
+        ];
+        $password = password_hash($this->password, PASSWORD_DEFAULT, $options);
+
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("UPDATE user
+        SET firstname = :firstname,
+        lastname = :lastname,
+        date_of_birth = :date_of_birth,
+        password = :password
+        WHERE id = :userid;");
+
+        $statement->bindValue(':firstname', $this->getFirstname());
+        $statement->bindValue(':lastname', $this->getLastname());
+        $statement->bindValue(':date_of_birth', $this->getDate_of_birth());
+        // $statement->bindValue(':email', $this->getEmail());
+        $statement->bindValue(':password', $password);
+        $statement->bindValue(':userid', $userId);
+        $result = $statement->execute();
+        var_dump($statement->errorInfo());
+        return $result;
+    }
+
+
+
+
 }

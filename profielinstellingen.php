@@ -5,14 +5,15 @@ require_once(__DIR__ . "/autoload.php");
 session_start();
 
 // if the session is not set then a redirect
-if(!isset($_SESSION['email'])){
+if(!isset($_SESSION['id'])){
   header("Location: login.php");
 }else{
 
     // else do something in this page
-    $sessionUser = $_SESSION['email'];
+    $sessionUser = $_SESSION['id'];
     $userEmail = $sessionUser->getEmail();
     $user = User::loadProfile($userEmail);
+    $userId = $user['id'];
 }
 
 
@@ -53,7 +54,7 @@ if(!isset($_SESSION['email'])){
 
 <h1 class="card__title">Profiel details</h1>
 <ul class="list">
-    <div class="list__second">
+    <div id="showProfileDetails" class="list__second">
         <h2 class="list__subtitle">Persoonlijke details</h2>
         <li class="list__item">Voornaam
             <ul class="list__second">
@@ -80,8 +81,38 @@ if(!isset($_SESSION['email'])){
                 <li class="list__item__second">******
             </ul>
         </li>
-        <a href="#" class="list__link">Persoonlijke details bijwerken</a>
+        <a id="edit" href="#" class="list__link">Persoonlijke details bijwerken</a>
     </div>
+
+    <form method="POST" id="editProfileDetails" class="list__second">
+        <h2 class="list__subtitle">Persoonlijke details</h2>
+        <li class="list__item">Voornaam
+            <ul class="list__second">
+                <li class="list__item__second"><input id="firstname" type="text" name="firstname" placeholder="john">
+            </ul>
+        </li>
+        <li class="list__item">Achternaam
+            <ul class="list__second">
+                <li class="list__item__second"><input id="lastname" type="text" name="lastname" placeholder="doe">
+            </ul>
+        </li>
+        <li class="list__item">Geboortedatum
+            <ul class="list__second">
+                <li class="list__item__second"><input id="date_of_birth" type="date" name="date_of_birth" placeholder="1997-01-01">
+            </ul>
+        </li>
+        <li class="list__item">E-mailadres
+            <ul class="list__second">
+                <li class="list__item__second"><?php echo $user['email'];?>
+            </ul>
+        </li>
+        <li class="list__item">Wachtwoord
+            <ul class="list__second">
+                <li class="list__item__second"><input id="password" type="password" name="password" placeholder="*******">
+            </ul>
+        </li>
+        <a id="update" type="submit" href="#" class="list__link">Update persoonlijke details</a>
+    </form>
 
   <ul class="list--second">
     <div class="list__second">
@@ -113,11 +144,12 @@ if(!isset($_SESSION['email'])){
 </ul>
 
 
-
-
-
-
 <?php include_once("inc/footer.inc.php"); ?>
+
+<script type="text/javascript">
+    let userId = <?php echo $userId;?>;
+</script>
+<script src="/javascript/profile.js"></script>
 
 </body>
 </html>
