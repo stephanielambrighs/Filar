@@ -69,7 +69,6 @@ session_start();
             <h2 class="card__subtitle">Totaal PET ingeleverd</h2>
             <h3 class="card__subtitle--h3"><?php echo $currentPlastic[0] ?>,<?php echo $currentPlastic[1] ?>kg</h3>
         </div>
-        <a href="#" class="form-group__link--code">Mijn volledige inlevergeschiedenis</a>
     </div>
   </div>
   <div class="card__header--code">
@@ -79,6 +78,7 @@ session_start();
         Met de onderstaande knop kan je gemakkelijk het formulier met jouw persoonlijke code
         downloaden en vervolgens zelf afprinten zo vaak als je nodig hebt.
         Het werkt gelijkaardig aan een retour doen van een pakketje dat je besteld hebt.
+        <br>
         <br>
         Je moet gewoon voor elke zak met PET flessen die je zou willen inleveren
         het formulier afdrukken en één op elke zak vastmaken.
