@@ -12,8 +12,10 @@
 
     // else do something in this page
     $u = new User();
-    $deliveries = $u->deliveryHistory();
-
+    $email = $_SESSION['email'];
+    $id = $u->getId($email)[0][0];
+    $deliveries = $u->deliveryHistory($id);
+    //var_dump($deliveries);
 }
 
 ?>

@@ -12,8 +12,9 @@ if(!isset($_SESSION['id'])){
 
 // else do something in this page
   $u = new User();
-  $purchases = $u->purchaseHistory();
-
+  $email = $_SESSION['email'];
+  $id = $u->getId($email)[0][0];
+  $purchases = $u->purchaseHistory($id);
 }
 
 ?>
@@ -55,15 +56,17 @@ if(!isset($_SESSION['id'])){
     <th class="table__title">Datum</th>
     <th class="table__title">Prijs</th>
     <th class="table__title">Aantal</th>
+    <th class="table__title">Korting</th>
     <th class="table__title--item">Subtotaal</th>
   </tr>
   <?php foreach($purchases as $p): ?>
   <tr class="table__item">
-    <td class="table__subtitle"><img class="table__image" src="/images/product_smartphone_houder.jpg" alt="smarthphone_houder"><span class="table__subtitle--product"><?php echo $p["name"] ?></span></td>
+    <td class="table__subtitle"><img class="table__image" src="/images/<?php echo $p["image_path"] ?>" alt="smarthphone_houder"><span class="table__subtitle--product"><?php echo $p["name"] ?></span></td>
     <td class="table__subtitle"><?php echo $p["date"] ?></td>
     <td class="table__subtitle">€<?php echo $p["price"] ?></td>
     <td class="table__subtitle"><?php echo $p["quantity"] ?></td>
-    <td class="table__subtitle--item">€<?php echo $p["quantity"]*$p["price"] ?></td>
+    <td class="table__subtitle"><?php echo (1-$p["discount"])*100 ?>%</td>
+    <td class="table__subtitle--item">€<?php echo $p["quantity"]*$p["price"]*$p["discount"] ?></td>
   </tr>
   <?php endforeach; ?>
 </table>

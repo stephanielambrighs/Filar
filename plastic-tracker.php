@@ -5,13 +5,19 @@ require_once(__DIR__ . "/autoload.php");
 
 session_start();
 
-// if the session is not set then a redirect
-if(!isset($_SESSION['id'])){
-  header("Location: login.php");
-}else{
-  // else do something in this page
-  $u = new User();
-  $currentPlastic = $u->plasticTracker();
+  // if the session is not set then a redirect
+  if(!isset($_SESSION['id'])){
+    header("Location: login.php");
+  }else{
+    // else do something in this page
+    $u = new User();
+    $email = $_SESSION['email'];
+    $id = $u->getId($email)[0][0];
+    $allDelivered = $u->allDelivered($id);
+    $u->allDeliveredSum($id);
+    $currentPlastic = $u->plasticTracker($id);
+    $coupons_used = $u->getCoupons($id);
+    $coupons_available = $u->plasticTracker($id)[0];
 }
 
 ?>
@@ -56,8 +62,8 @@ if(!isset($_SESSION['id'])){
     </figure>
     <div class="card__body--tracker">
         <div class="card__copy">
-            <h2 class="card__subtitle">Bonnen ontvangen</h2>
-            <h3 class="card__subtitle--h3"><?php echo $currentPlastic[0] ?></h3>
+            <h2 class="card__subtitle">Bonnen beschikbaar</h2>
+            <h3 class="card__subtitle--h3"><?php echo $coupons_available-$coupons_used ?></h3>
         </div>
         <div class="card__copy">
             <h2 class="card__subtitle">Totaal PET ingeleverd</h2>
