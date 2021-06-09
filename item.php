@@ -2,6 +2,9 @@
     include_once(__DIR__ . "/classes/User.php");
     
     $s = new Shop();
+    $u = new User();
+    $email = $_SESSION['email'];
+    $id = $u->getId($email)[0][0];
     $key = $_GET["item"];
 
     $print_details = $s->productDetails($key);
@@ -9,7 +12,7 @@
     if(!empty($_POST["submitItem"])){
         $quantity = $_POST["quantity"];
         $s->getItemData($key);
-        $s->addToCart($quantity, 1, $key);
+        $s->addToCart($quantity, $id, $key);
     }
 ?>
 
@@ -29,7 +32,7 @@
 <article class="card">
   <div class="card__header">
     <figure class="card__figure">
-        <img src="/images/product_smartphone_houder.jpg" alt="print_smarthphone" class="card__image--item">
+        <img src="/images/<?php echo $print_details[0]["image_path"] ?>" alt="print_smarthphone" class="card__image--item">
     </figure>
     <div class="card__body--item">
         <h1 class="card__subtitle--item"><?php echo $print_details[0]["name"] ?></h1>
@@ -59,8 +62,7 @@
             <a href="#" class="button__item">
                 <span class="button__body">Toevoegen aan winkelmand</span>
             </a>
-            
-                <input type="submit" name="submitItem">
+            <input type="submit" name="submitItem">
         </form>
     </div>
   </div>

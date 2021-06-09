@@ -23,7 +23,7 @@
   <?php foreach($prints as $key => $p): ?>
   <div class="card__header__shop">
     <figure class="card__figure">
-        <a href="item.php?item=<?php echo $key+1 ?>"><img src="/images/product_keycaps.jpg" alt="print_keycaps" class="card__image__print"></a>
+        <a href="item.php?item=<?php echo $key+1 ?>"><img src="/images/<?php echo $p["image_path"] ?>" alt="print_keycaps" class="card__image__print"></a>
     </figure>
     <div class="card__body__shop">
         <h3 class="card__subtitle__shop"><?php echo $p["name"] ?></h3>
