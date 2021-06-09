@@ -1,13 +1,16 @@
 <?php
     include_once(__DIR__ . "/classes/User.php");
+
+    session_start();
     
     $s = new Shop();
     $u = new User();
-    $email = $_SESSION['email'];
+    $email = $_SESSION["email"];
     $id = $u->getId($email)[0][0];
     $key = $_GET["item"];
 
     $print_details = $s->productDetails($key);
+    $filament_details = $s->productDetails(6);
 
     if(!empty($_POST["submitItem"])){
         $quantity = $_POST["quantity"];
@@ -36,6 +39,7 @@
     </figure>
     <div class="card__body--item">
         <h1 class="card__subtitle--item"><?php echo $print_details[0]["name"] ?></h1>
+        <h2>€<?php echo $print_details[0]["price"] ?></h2>
         <p class="card__copy"><?php echo $print_details[0]["description"] ?></p>
         <h3 class="card__subtitle--item">Specificaties</h3>
         <ul>
@@ -45,9 +49,9 @@
         </ul>
         <h3 class="card__subtitle--item">Afmetingen</h3>
         <ul>
-            <li>2 cm hoog</li>
-            <li>4 cm breed</li>
-            <li>6 cm diep</li>
+            <li><?php echo $print_details[0]["height"] ?> cm hoog</li>
+            <li><?php echo $print_details[0]["width"] ?> cm breed</li>
+            <li><?php echo $print_details[0]["depth"] ?> cm diep</li>
         </ul>
         <form class="card__body__block" action="" method="POST">
             <div class="card__count">

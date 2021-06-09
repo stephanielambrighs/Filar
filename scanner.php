@@ -1,6 +1,8 @@
 <?php
     include_once(__DIR__ . "/classes/Scanner.php");
 
+    session_start();
+
     if(!empty($_POST["submit_scan"])){
         $sc = new Scanner();
         $user_id = $_POST["user_id"];
