@@ -30,7 +30,7 @@
             <div class="form__header--first">
                 <input type="hidden" name="_captcha" value="false">
                 <!-- change page url -->
-                <input type="hidden" name="_next" value="http://localhost:8086/contact.php">
+                <input type="hidden" name="_next" value="https://filar.ellievision.be/contact.php">
                 <button type="submit" href="#" class="button__longtext--contact">
                     <span class="button__body">Versturen</span>
                 </button>

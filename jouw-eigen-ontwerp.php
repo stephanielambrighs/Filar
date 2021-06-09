@@ -121,7 +121,7 @@
             <div class="form__header">
                 <input type="hidden" name="_captcha" value="false">
                 <!-- change page url -->
-                <input type="hidden" name="_next" value="http://localhost:8086/jouw-eigen-ontwerp.php">
+                <input type="hidden" name="_next" value="https://filar.ellievision.be/jouw-eigen-ontwerp.php">
                 <button type="submit" href="#" class="button__longtext--send">
                     <span class="button__body">Versturen</span>
                 </button>
