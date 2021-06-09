@@ -1,7 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
 
 require_once(__DIR__ . "/autoload.php");
 
@@ -13,7 +11,7 @@ if(!isset($_SESSION["email"])){
 }else{
 
 // else do something in this page
-    $u = new User();    
+    $u = new User();
     $s = new Shop();
     $email = $_SESSION['email'];
     $id = $u->getId($email)[0][0];
@@ -36,7 +34,7 @@ if(!isset($_SESSION["email"])){
             if(isset($_POST["apply_discount"])){
                 $discountMultiplier = 0.8;
                 $u->updateCoupons($id, $coupons_available);
-                    
+
             }
             $s->moveToHistory($cart_items, $key, $discountMultiplier);
         endforeach;
@@ -140,27 +138,25 @@ if(!isset($_SESSION["email"])){
     <div class="card__body--shop">
         <h2 class="card__subtitle--item">Totaal aankoop</h2>
         <h3 class="card__subtitle--item">Je hebt <?php echo $coupons_available-$coupons_used ?> kortingsbonnen van 20% per aankoop</h3>
-        <a href="#" class="button__item--small">
+        <!-- <a href="#" class="button__item--small">
             <span class="button__body">Een kortingsbon toepassen</span>
-        </a>
-        <!-- <p class="card__copy">
-        *Maximum 1 kortingsbon per aankoop
-        </p> -->
+        </a> -->
+        <form action="" method="POST">
+            <div class="form-group--shop">
+                <input type="checkbox" id="korting" name="apply_discount" value="Korting toepassen">
+                <label class="form-group__label--shop" for="apply_discount">Korting toepassen</label>
+            </div>
+            <!-- <input class="button__code--small" type="submit" name="confirm_purchase" value="Aankoop bevestigen"> -->
     </div>
     <div class="card__body--shop">
-        <h2 id="total_order" class="card__subtitle--item">€<?php echo $subtotalOrder*$discountMultiplier+$sendCost ?></h2>
-        <a href="#" class="button__item--edit">
-            <span class="button__body">Winkelmand bijwerken</span>
-        </a>
-        <a href="#" class="button__code--small">
-            <span class="button__body">Betalen</span>
-        </a>
-        <form action="" method="POST">
-            <input type="submit" name="confirm_purchase" value="Aankoop bevestigen">
-            <label for="apply_discount">Korting toepassen</label>
-            <input type="checkbox" id="korting" name="apply_discount" value="Korting toepassen">
-            <input type="submit" name="clear_cart" value="Winkelmand leegmaken">
+            <h2 id="total_order" class="card__subtitle--item">€<?php echo $subtotalOrder*$discountMultiplier+$sendCost ?></h2>
+            <input type="submit" name="clear_cart" class="button__item--shop" value="Winkelmand leegmaken">
+            <!-- <span class="button__body">Winkelmand bijwerken</span> -->
+        <!-- </input> -->
+            <input name="confirm_purchase" type="submit" class="button__code--shop" value="Aankoop bevestigen">
+            <!-- <span class="button__body">Betalen</span> -->
         </form>
+            <!-- <input type="submit" name="clear_cart" value="Winkelmand leegmaken"> -->
     </div>
   </div>
 </article>

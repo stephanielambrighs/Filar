@@ -22,14 +22,29 @@
     <title>Winkel</title>
 </head>
 <body>
-    <p id="scan_camera_view">Hoeveelheid</p>
-    <p id="scan_user_id">Gebruiker</p>
-    <p id="scan_amount">Hoeveelheid</p>
-    <form action="" method="POST">
-        <input type="text" name="user_id" placeholder="Gebruiker ID">
-        <input type="text" name="amount" placeholder="Hoeveelheid in kg">
-        <input type="text" name="method" placeholder="Hoe het werd ingeleverd">
-        <input type="submit" name="submit_scan">
-    </form>
+
+<?php include_once("inc/nav.inc.php"); ?>
+
+<form class="form-group" action="" method="POST">
+    <h1 class="form-group__title">PET inzamelen</h1>
+    <div class="form-group__header">
+        <label for="myInput" class="form-group__label">Gebruiker</label>
+        <input class="form-group__input" type="text" name="user_id" placeholder="Gebruiker ID">
+    </div>
+    <div class="form-group__header">
+        <label for="myInput" class="form-group__label">Hoeveelheid in kg</label>
+        <input class="form-group__input" type="text" name="amount" placeholder="Hoeveelheid in kg">
+    </div>
+    <div class="form-group__header">
+        <label for="myInput" class="form-group__label">Hoe het werd ingeleverd</label>
+        <input class="form-group__input" type="text" name="method" placeholder="Hoe het werd ingeleverd">
+    </div>
+    <div class="form-group__header">
+        <input class="button--scan" name="submit_scan" type="submit">
+    </div>
+</form>
+
+
+<?php include_once("inc/footer.inc.php"); ?>
 </body>
 </html>
