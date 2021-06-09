@@ -53,6 +53,7 @@ if(!isset($_SESSION['id'])){
 <table class="table">
   <tr class="table__header">
     <th class="table__title">Product</th>
+    <th class="table__title"></th>
     <th class="table__title">Datum</th>
     <th class="table__title">Prijs</th>
     <th class="table__title">Aantal</th>
@@ -61,7 +62,8 @@ if(!isset($_SESSION['id'])){
   </tr>
   <?php foreach($purchases as $p): ?>
   <tr class="table__item">
-    <td class="table__subtitle"><img class="table__image" src="/images/<?php echo $p["image_path"] ?>" alt="smarthphone_houder"><span class="table__subtitle--product"><?php echo $p["name"] ?></span></td>
+    <td class="table__subtitle"><img class="table__image" src="/images/<?php echo $p["image_path"] ?>" alt="smarthphone_houder"></td>
+    <td class="table__subtitle"><span class="table__subtitle--product"><?php echo $p["name"] ?></span></td>
     <td class="table__subtitle"><?php echo $p["date"] ?></td>
     <td class="table__subtitle">€<?php echo $p["price"] ?></td>
     <td class="table__subtitle"><?php echo $p["quantity"] ?></td>

@@ -21,7 +21,7 @@
         <p class="card__copy--home">
         Milieuverantwoord 3D printen
         </p>
-        <a href="#" class="button__longtext--home">
+        <a href="winkel.php" class="button__longtext--home">
             <span class="button__body">Naar de winkel</span>
         </a>
     </div>
@@ -79,7 +79,7 @@
         In ruil voor jouw inspanning kan je deze zakken inleveren of thuis laten ophalen en als beloning een
         kortingsbon krijgen die je in onze winkel kan gebruiken. Bekijk alvast welke leuke producten we allemaal aanbieden!
         </p>
-        <a href="#" class="button__code--small">
+        <a href="winkel.php" class="button__code--small">
             <span class="button__body">Naar de winkel</span>
         </a>
     </div>

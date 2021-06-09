@@ -9,6 +9,7 @@
     $email = $_SESSION["email"];
     $id = $u->getId($email)[0][0];
     $key = $_GET["item"];
+    $prints = $s->allPrints();
 
     $print_details = $s->productDetails($key);
     $filament_details = $s->productDetails(6);
@@ -74,50 +75,17 @@
 
 <h1 class="card__title--item">Anderen bekeken ook</h1>
 <article class="card--shop--item">
+<?php foreach($prints as $key => $p): ?>
   <div class="card__header__shop">
     <figure class="card__figure">
-        <a href="#"><img src="/images/product_keycaps.jpg" alt="print_keycaps" class="card__image__print"></a>
+        <a href="item.php?item=<?php echo $key+1 ?>"><img src="/images/<?php echo $p["image_path"] ?>" alt="print_keycaps" class="card__image__print"></a>
     </figure>
     <div class="card__body__shop">
-        <h3 class="card__subtitle__shop">Keycaps</h3>
-        <p class="card__subtitle__body">€30</p>
+        <h3 class="card__subtitle__shop"><?php echo $p["name"] ?></h3>
+        <p class="card__subtitle__body">€<?php echo $p["price"] ?></p>
     </div>
   </div>
-  <div class="card__header__shop">
-    <figure class="card__figure">
-        <a href="#"><img src="/images/product_smartphone_houder.jpg" alt="print_smarthphone" class="card__image__print"></a>
-    </figure>
-    <div class="card__body__shop">
-        <h3 class="card__subtitle__shop">GSM-houder</h3>
-        <p class="card__subtitle__body">€15</p>
-    </div>
-  </div>
-  <div class="card__header__shop">
-    <figure class="card__figure">
-        <a href="#"><img src="/images/product_yoda.jpg" alt="print_yoda" class="card__image__print"></a>
-    </figure>
-    <div class="card__body__shop">
-        <h3 class="card__subtitle__shop">Baby Yoda</h3>
-        <p class="card__subtitle__body">€20</p>
-    </div>
-  </div>
-  <div class="card__header__shop">
-    <figure class="card__figure">
-        <a href="#"><img src="/images/product_dalek.jpg" alt="print_dalek" class="card__image__print"></a>
-    </figure>
-    <div class="card__body__shop">
-        <h3 class="card__subtitle__shop">Dalek</h3>
-        <p class="card__subtitle__body">€25</p>
-    </div>
-  </div>  <div class="card__header__shop">
-    <figure class="card__figure">
-        <a href="#"><img src="/images/product_trees.jpg" alt="print_trees" class="card__image__print"></a>
-    </figure>
-    <div class="card__body__shop">
-        <h3 class="card__subtitle__shop">Team Trees</h3>
-        <p class="card__subtitle__body">€25</p>
-    </div>
-  </div>
+  <?php endforeach; ?>
 </article>
 
 <?php include_once("inc/footer.inc.php"); ?>

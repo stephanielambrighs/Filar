@@ -28,7 +28,7 @@ class Shop
 
     public function showCart($id){
         $conn = Db::getConnection();
-        $statement = $conn->prepare("SELECT * FROM ilya_cart join ilya_products ON ilya_cart.product_id = ilya_products.id");
+        $statement = $conn->prepare("SELECT * FROM ilya_cart join ilya_products ON ilya_cart.product_id = ilya_products.id WHERE user_id = :user_id");
         $statement->bindValue(":user_id", $id);
         $statement->execute();
         $result = $statement->fetchAll();

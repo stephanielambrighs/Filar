@@ -168,8 +168,8 @@ if(!isset($_SESSION["email"])){
                     <a href="#"><img src="/images/7_AankoopGelukt.png" alt="aankoop-gelukt" class="card__image__print--center"></a>
                 </figure>
                 <h2 class="card__subtitle__shop--center">Jouw aankoop is gelukt!</h2>
-                <a href="#" class="button__longtext">
-                    <span class="button__body">Terug naar de winkel</span>
+                <a href="winkel.php" class="button__longtext">
+                    <span class="button__body">Naar de winkel</span>
                 </a>
             </div>
         </article>
@@ -180,7 +180,7 @@ if(!isset($_SESSION["email"])){
             <figure class="card__figure">
                 <a href="#"><img src="/images/8_LegeWinkelmand.png" alt="lege-winkelmand" class="card__image__print--center"></a>
             </figure>
-            <a href="#" class="button__longtext">
+            <a href="winkel.php" class="button__longtext">
                 <span class="button__body">Bekijk ons aanbod</span>
             </a>
         </div>

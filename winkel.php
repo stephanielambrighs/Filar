@@ -38,13 +38,13 @@
   <div class="card__header__shop--ownarticle">
     <h2 class="card__subtitle__shop--ownarticle">Jouw eigen ontwerp</h2>
     <figure class="card__figure">
-        <a href="#"><img src="/images/eigen_ontwerp_filar.jpg" alt="eigen_ontwerp_filar" class="card__image__print--ownarticle"></a>
+        <a href="jouw-eigen-ontwerp.php"><img src="/images/eigen_ontwerp_filar.jpg" alt="eigen_ontwerp_filar" class="card__image__print--ownarticle"></a>
     </figure>
   </div>
   <div class="card__header__shop--ownarticle">
     <h2 class="card__subtitle__shop--ownarticle">Ons gerecycleerd filament</h2>
     <figure class="card__figure">
-        <a href="#"><img src="/images/gerecycleerd_filament.png" alt="gerecycleerd_filament" class="card__image__print--ownarticle"></a>
+        <a href="item.php?item=6"><img src="/images/gerecycleerd_filament.png" alt="gerecycleerd_filament" class="card__image__print--ownarticle"></a>
     </figure>
   </div>
 </article>

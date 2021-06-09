@@ -55,15 +55,15 @@
   <tr class="table__header">
     <th class="table__title">Hoeveelheid</th>
     <th class="table__title">Inlevermethode</th>
-    <th class="table__title">Datum</th>
-    <th class="table__title--item">Bon ontvangen</th>
+    <th class="table__title--item">Datum</th>
+    <!-- <th class="table__title--item">Bon ontvangen</th> -->
   </tr>
   <?php foreach($deliveries as $d): ?>
   <tr class="table__item">
     <td class="table__subtitle"><?php echo $d["delivered_plastic"] ?>kg</td>
     <td class="table__subtitle"><?php echo $d["delivery_method"] ?></td>
-    <td class="table__subtitle"><?php echo $d["delivery_date"] ?></td>
-    <td class="table__subtitle--item">Nog niet ontvangen</td>
+    <td class="table__subtitle--item"><?php echo $d["delivery_date"] ?></td>
+    <!-- <td class="table__subtitle--item">Nog niet ontvangen</td> -->
   </tr>
   <?php endforeach; ?>
 </table>
