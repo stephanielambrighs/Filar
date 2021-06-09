@@ -13,7 +13,10 @@ if(!isset($_SESSION['id'])){
 
       if($user->canLogin()){
         session_start();
+        $_SESSION["email"] = $user->getEmail();
+        $email = $user->getEmail();
         $_SESSION['id'] = $user->getId($email)[0][0];
+        //$_SESSION['id'] = $user->get_Id();
         header("Location: plastic-tracker.php");
       }
       else{
