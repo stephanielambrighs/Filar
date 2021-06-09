@@ -10,7 +10,8 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
 
       if($user->canLogin()){
         session_start();
-        $_SESSION['email'] = $user;
+        $_SESSION['email'] = $user->getEmail();
+        $_SESSION['id'] = $user->getId($email)[0][0];
         header("Location: plastic-tracker.php");
       }
       else{
