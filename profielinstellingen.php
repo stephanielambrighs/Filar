@@ -21,10 +21,6 @@ if(!isset($_SESSION['id'])){
     $userId = $u->getId($userEmail)[0][0];
 }
 
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
