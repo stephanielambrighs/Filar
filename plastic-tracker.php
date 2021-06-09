@@ -1,12 +1,12 @@
 <?php
 
-  include_once(__DIR__ . "/classes/User.php");
-  require_once(__DIR__ . "/autoload.php");
+include_once(__DIR__ . "/classes/User.php");
+require_once(__DIR__ . "/autoload.php");
 
-  session_start();
+session_start();
 
   // if the session is not set then a redirect
-  if(!isset($_SESSION['email'])){
+  if(!isset($_SESSION['id'])){
     header("Location: login.php");
   }else{
     // else do something in this page
@@ -56,10 +56,9 @@
   <div class="card__header--tracker">
   <h1 class="card__title">Plastic Tracker</h1>
     <figure class="card__figure">
-      <!-- <img src="/images/2_Sterk.png" alt="donut_chart" class="card__image--chart"> -->
-      <p>Huidig PET doel</p>
-      <p>0,<span id="currentTarget"><?php echo $currentPlastic[1] ?></span>/1kg</p>
       <canvas id="myChart" class="card__image--chart"></canvas>
+        <h3 class="card__canvas--title">Huidig PET doel</h3>
+        <h2 class="card__canvas--kilo">0,<span id="currentTarget"><?php echo $currentPlastic[1] ?></span>/1kg</h2>
     </figure>
     <div class="card__body--tracker">
         <div class="card__copy">
