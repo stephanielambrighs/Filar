@@ -28,13 +28,13 @@ class Shop
 
     public function showCart($id){
         $conn = Db::getConnection();
-        $statement = $conn->prepare("SELECT * FROM ilya_cart join ilya_products ON ilya_cart.product_id = ilya_products.id WHERE user_id = :user_id");
+        $statement = $conn->prepare("SELECT * FROM ilya_cart join ilya_products ON ilya_cart.product_id = ilya_products.id");
         $statement->bindValue(":user_id", $id);
         $statement->execute();
         $result = $statement->fetchAll();
         return $result;
     }
-    
+
     //----------TOEVOEGEN AANKOOPGESCHIEDENIS----------
 
     public function getSubtotalOrder($id){
@@ -50,7 +50,7 @@ class Shop
         $subtotalOrder = array_sum($subtotalArray);
         return $subtotalOrder;
     }
-    
+
     public function moveToHistory($cart_items, $key, $discount){
         $date = date("Y-m-d");
         $conn = Db::getConnection();

@@ -101,15 +101,16 @@ class User
             $statement->execute();
             return $coupons_used;
         }
+    }
 
      /**
      * Get the value of id
      */
-    public function get_Id()
-    {
-        return $this->id;
+    // public function get_Id()
+    // {
+    //     return $this->id;
 
-    }
+    // }
 
     /**
      * Set the value of id
