@@ -8,7 +8,7 @@ require_once(__DIR__ . "/autoload.php");
 session_start();
 
 // if the session is not set then a redirect
-if(!isset($_SESSION['id'])){
+if(!isset($_SESSION["email"])){
   header("Location: login.php");
 }else{
 
