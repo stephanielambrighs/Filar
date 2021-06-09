@@ -10,15 +10,16 @@ if(!isset($_SESSION['id'])){
 }else{
 
     // else do something in this page
-    $sessionUser = $_SESSION['id'];
-    $userEmail = $sessionUser->getEmail();
+    //$sessionUser = $_SESSION['id'];
+    //$userEmail = $sessionUser->getEmail();
+    //$user = User::loadProfile($userEmail);
+    //$userId = $user['id'];
+    
+    $u = new User();
+    $userEmail = $_SESSION["email"];
     $user = User::loadProfile($userEmail);
-    $userId = $user['id'];
+    $userId = $u->getId($userEmail)[0][0];
 }
-
-
-
-
 
 ?>
 <!DOCTYPE html>

@@ -102,7 +102,6 @@ class User
             return $coupons_used;
         }
     }
-
      /**
      * Get the value of id
      */

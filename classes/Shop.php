@@ -74,7 +74,7 @@ class Shop
 
     public function allPrints(){
         $conn = Db::getConnection();
-        $statement = $conn->query("SELECT * FROM ilya_products");
+        $statement = $conn->query("SELECT * FROM ilya_products LIMIT 5");
         $statement->execute();
         $result = $statement->fetchAll();
         return $result;

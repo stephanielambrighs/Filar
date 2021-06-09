@@ -80,6 +80,7 @@ if(!isset($_SESSION['id'])){
         downloaden en vervolgens zelf afprinten zo vaak als je nodig hebt.
         Het werkt gelijkaardig aan een retour doen van een pakketje dat je besteld hebt.
         <br>
+        <br>
         Je moet gewoon voor elke zak met PET flessen die je zou willen inleveren
         het formulier afdrukken en één op elke zak vastmaken.
         Dan hoef je het alleen nog maar in te leveren en de rest van het proces nemen wij wel voor onze rekening.
