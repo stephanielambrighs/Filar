@@ -1,6 +1,8 @@
 <?php
     include_once(__DIR__ . "/classes/User.php");
-    
+
+
+    session_start();
     $s = new Shop();
     $u = new User();
     $email = $_SESSION['email'];
@@ -51,7 +53,7 @@
         </ul>
         <form class="card__body__block" action="" method="POST">
             <div class="card__count">
-                <input id="quantity" type="text" name="quantity" value="1">
+                <input class="card__count--input" id="quantity" type="text" name="quantity" value="1"></input>
             </div>
             <div class="card__arrow--first">
                 <a href="#" id="add"><img class="card__img--first" src="/images/arrow_icon.png"></a>
@@ -59,10 +61,9 @@
                 <a href="#" id="subtract"><img class="card__img--second" src="/images/arrow_icon.png"></a>
                 <!-- </div> -->
             </div>
-            <a href="#" class="button__item">
-                <span class="button__body">Toevoegen aan winkelmand</span>
-            </a>
-            <input type="submit" name="submitItem">
+                <input type="submit" name="submitItem" class="button__item" value="Toevoegen aan winkelmand"></input>
+                <!-- <span class="button__body">Toevoegen aan winkelmand</span> -->
+            <!-- <input type="submit" name="submitItem"> -->
         </form>
     </div>
   </div>
@@ -130,7 +131,7 @@
         quantity.value = counter;
         console.log(counter);
     });
-    
+
     subtract.addEventListener("click", function(e){
         e.preventDefault();
         if(counter>=2){
@@ -139,7 +140,7 @@
             console.log(counter);
         }
     });
-    
+
 </script>
 
 </body>
