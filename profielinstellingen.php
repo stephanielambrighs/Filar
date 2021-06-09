@@ -5,12 +5,15 @@ require_once(__DIR__ . "/autoload.php");
 session_start();
 
 // if the session is not set then a redirect
-if(!isset($_SESSION['email'])){
+if(!isset($_SESSION['id'])){
   header("Location: login.php");
 }else{
 
-// else do something in this page
-
+    // else do something in this page
+    $sessionUser = $_SESSION['id'];
+    $userEmail = $sessionUser->getEmail();
+    $user = User::loadProfile($userEmail);
+    $userId = $user['id'];
 }
 
 
@@ -50,27 +53,28 @@ if(!isset($_SESSION['email'])){
 
 
 <h1 class="card__title">Profiel details</h1>
+
 <ul class="list">
-    <div class="list__second">
+    <div id="showProfileDetails" class="list__second">
         <h2 class="list__subtitle">Persoonlijke details</h2>
         <li class="list__item">Voornaam
             <ul class="list__second">
-                <li class="list__item__second">John
+                <li class="list__item__second"><?php echo $user['firstname'];?>
             </ul>
         </li>
         <li class="list__item">Achternaam
             <ul class="list__second">
-                <li class="list__item__second">Doe
+                <li class="list__item__second"><?php echo $user['lastname'];?>
             </ul>
         </li>
         <li class="list__item">Geboortedatum
             <ul class="list__second">
-                <li class="list__item__second">01/01/1997
+                <li class="list__item__second"><?php echo $user['date_of_birth'];?>
             </ul>
         </li>
         <li class="list__item">E-mailadres
             <ul class="list__second">
-                <li class="list__item__second">john@doe.com
+                <li class="list__item__second"><?php echo $user['email'];?>
             </ul>
         </li>
         <li class="list__item">Wachtwoord
@@ -78,44 +82,105 @@ if(!isset($_SESSION['email'])){
                 <li class="list__item__second">******
             </ul>
         </li>
-        <a href="#" class="list__link">Persoonlijke details bijwerken</a>
+        <a id="edit" href="#" class="list__link">Persoonlijke details bijwerken</a>
+        <a href="logout.php" class="button__item--edit">
+            <span class="button__body">Uitloggen</span>
+        </a>
     </div>
 
-  <ul class="list--second">
+    <form method="POST" id="editProfileDetails" class="list__second">
+        <h2 class="list__subtitle">Persoonlijke details</h2>
+        <li class="list__item">Voornaam
+            <ul class="list__second">
+                <li class="list__item__second"><input id="firstname" type="text" name="firstname" placeholder="john">
+            </ul>
+        </li>
+        <li class="list__item">Achternaam
+            <ul class="list__second">
+                <li class="list__item__second"><input id="lastname" type="text" name="lastname" placeholder="doe">
+            </ul>
+        </li>
+        <li class="list__item">Geboortedatum
+            <ul class="list__second">
+                <li class="list__item__second"><input id="date_of_birth" type="date" name="date_of_birth" placeholder="1997-01-01">
+            </ul>
+        </li>
+        <li class="list__item">E-mailadres
+            <ul class="list__second">
+                <li class="list__item__second"><?php echo $user['email'];?>
+            </ul>
+        </li>
+        <li class="list__item">Wachtwoord
+            <ul class="list__second">
+                <li class="list__item__second"><input id="password" type="password" name="password" placeholder="*******">
+            </ul>
+        </li>
+        <a id="update" type="submit" href="#" class="list__link">Update persoonlijke details</a>
+    </form>
+
+  <ul id="showAdressDetails" class="list--second">
     <div class="list__second">
         <h2 class="list__subtitle">Adres details</h2>
         <li class="list__item">Straat
             <ul class="list__second">
-                <li class="list__item__second">Fakerstraat 99
+                <li class="list__item__second"><?php echo $user['street'];?>
             </ul>
         </li>
         <li class="list__item">Gemeente
             <ul class="list__second">
-                <li class="list__item__second">Faketown
+                <li class="list__item__second"><?php echo $user['city'];?>
             </ul>
         </li>
         <li class="list__item">Provincie
             <ul class="list__second">
-                <li class="list__item__second">Fakerton
+                <li class="list__item__second"><?php echo $user['province'];?>
             </ul>
         </li>
         <li class="list__item">Land
             <ul class="list__second">
-                <li class="list__item__second">Fakeland
+                <li class="list__item__second"><?php echo $user['country'];?>
             </ul>
         </li>
-        <a href="#" class="list__link">Adres details bijwerken</a>
+        <a id="editAdress" href="#" class="list__link">Adres details bijwerken</a>
+    </div>
+  </ul>
+
+  <form id="editAdressDetails" method="POST" class="list--second">
+    <div class="list__second">
+        <h2 class="list__subtitle">Adres details</h2>
+        <li class="list__item">Straat
+            <ul class="list__second">
+                <li class="list__item__second"><input id="street" type="text" name="street" placeholder="Zandpoortvest 60" required>
+            </ul>
+        </li>
+        <li class="list__item">Gemeente
+            <ul class="list__second">
+                <li class="list__item__second"><input id="city" type="text" name="city" placeholder="Mechelen" required>
+            </ul>
+        </li>
+        <li class="list__item">Provincie
+            <ul class="list__second">
+                <li class="list__item__second"><input id="province" type="text" name="province" placeholder="Antwerpen" required>
+            </ul>
+        </li>
+        <li class="list__item">Land
+            <ul class="list__second">
+                <li class="list__item__second"><input id="country" type="text" name="country" placeholder="Belgium" required>
+            </ul>
+        </li>
+        <a id="updateAdress" type="submit" href="#" class="list__link">Update adres details</a>
     </div>
   </ul>
 
 </ul>
 
 
-
-
-
-
 <?php include_once("inc/footer.inc.php"); ?>
+
+<script type="text/javascript">
+    let userId = <?php echo $userId;?>;
+</script>
+<script src="/javascript/profile.js"></script>
 
 </body>
 </html>

@@ -4,7 +4,18 @@ include_once(__DIR__ . "/Db.php");
 
 
 class User
-{   
+{
+    private $id;
+    private $firstname;
+    private $lastname;
+    private $date_of_birth;
+    private $email;
+    private $password;
+    private $street;
+    private $city;
+    private $province;
+    private $country;
+
     //----------PLASTIC TRACKER----------
 
     public function allDelivered(){
@@ -51,9 +62,84 @@ class User
         return $result;
     }
 
+     /**
+     * Get the value of id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
-    private $email;
-    private $password;
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+    /**
+     * Get the value of firstname
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set the value of firstname
+     *
+     * @return  self
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of lastname
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * Set the value of lastname
+     *
+     * @return  self
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of date_of_birth
+     */
+    public function getDate_of_birth()
+    {
+        return $this->date_of_birth;
+    }
+
+    /**
+     * Set the value of date_of_birth
+     *
+     * @return  self
+     */
+    public function setDate_of_birth($date_of_birth)
+    {
+        $this->date_of_birth = $date_of_birth;
+
+        return $this;
+    }
 
     public function getEmail()
     {
@@ -79,6 +165,86 @@ class User
         return $this;
     }
 
+    /**
+     * Get the value of street
+     */
+    public function getStreet()
+    {
+        return $this->street;
+    }
+
+    /**
+     * Set the value of street
+     *
+     * @return  self
+     */
+    public function setStreet($street)
+    {
+        $this->street = $street;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of city
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set the value of city
+     *
+     * @return  self
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of province
+     */
+    public function getProvince()
+    {
+        return $this->province;
+    }
+
+    /**
+     * Set the value of province
+     *
+     * @return  self
+     */
+    public function setProvince($province)
+    {
+        $this->province = $province;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of country
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Set the value of country
+     *
+     * @return  self
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
     public function register() {
         $options = [
             'cost' => 15
@@ -95,7 +261,7 @@ class User
         $statement->bindValue(':lastname', " ");
         $statement->bindValue(':email', $this->email);
         $statement->bindValue(':password', $password);
-        $statement->bindValue(':date_of_birth', NULL);
+        $statement->bindValue(':date_of_birth', "2000-01-01");
         $statement->bindValue(':street', " ");
         $statement->bindValue(':city', " ");
         $statement->bindValue(':province', " ");
@@ -110,14 +276,85 @@ class User
     public function canLogin() {
         $conn = Db::getConnection();
         $statement = $conn->prepare("select * from user where email = :email");
-        $statement->bindValue(":email", $this->email);
+        $statement->bindValue(":email", $this->getEmail());
         $statement->execute();
+        // var_dump($result);
         $dbUser = $statement->fetch();
+
         $hash = $dbUser["password"];
+
         if(password_verify($this->password, $hash)){
             return true;
         }else{
             return false;
         }
     }
+
+    // load the profiel details for the user
+    public static function loadProfile($email) {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("select * from user where email = :email");
+        $statement->bindValue(':email', $email);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+
+    public function updateProfile($userId){
+        $options = [
+            'cost' => 15
+        ];
+        $password = password_hash($this->password, PASSWORD_DEFAULT, $options);
+
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("UPDATE user
+        SET firstname = :firstname,
+        lastname = :lastname,
+        date_of_birth = :date_of_birth,
+        password = :password
+        WHERE id = :userid;");
+
+        $statement->bindValue(':firstname', $this->getFirstname());
+        $statement->bindValue(':lastname', $this->getLastname());
+        $statement->bindValue(':date_of_birth', $this->getDate_of_birth());
+        $statement->bindValue(':password', $password);
+        $statement->bindValue(':userid', $userId);
+        $result = $statement->execute();
+        // var_dump($statement->errorInfo());
+        return $result;
+    }
+
+
+    public function updateAdress($userId){
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("UPDATE user
+        SET street = :street,
+        city = :city,
+        province = :province,
+        country = :country
+        WHERE id = :userid;");
+
+        $statement->bindValue(':street', $this->getStreet());
+        $statement->bindValue(':city', $this->getCity());
+        $statement->bindValue(':province', $this->getProvince());
+        $statement->bindValue(':country', $this->getCountry());
+        $statement->bindValue(':userid', $userId);
+        $result = $statement->execute();
+        // var_dump($statement->errorInfo());
+        return $result;
+    }
+
+
+    public static function getProfileDetails($user_id) {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("select * from user where id = :id");
+        $statement->bindValue(':id', $user_id);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        // var_dump($result);
+        return $result;
+    }
+
+
 }

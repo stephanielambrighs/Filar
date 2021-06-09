@@ -2,7 +2,7 @@
     background-color: #F4F6FB;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding-top: 1em;
-    padding-bottom: 2em;
+    padding-bottom: 3em;
     margin-top: 0;
 
     &__title{
@@ -77,7 +77,7 @@
         text-align: center;
     }
 
-    &__subtitle--h3 {
+    &__subtitle--h3, &__canvas--kilo {
         color: #2628BA;
         font-size: 1.6em;
     }
@@ -104,6 +104,7 @@
         margin-right: auto;
         border-radius: 10px;
         width: 20em;
+        z-index: 1;
     }
 
 
@@ -159,8 +160,8 @@
 
     &__shop--center {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        padding-top: 1em;
-        padding-bottom: 5em;
+        padding-top: 8em;
+        padding-bottom: 18em;
     }
 
     &__header__shop--center{
@@ -345,6 +346,20 @@
 
     &__figure--switch--home2 {
         margin-left: 0em;
+    }
+
+    &__canvas--kilo, &__canvas--title {
+        text-align: center;
+        z-index: 2;
+        position: absolute;
+        margin-top: -180px;
+        margin-left: -7%;
+        width: 100%;
+    }
+
+    &__canvas--kilo{
+        font-size: 2em;
+        padding-top: 1em;
     }
 
 
@@ -536,9 +551,9 @@
         }
 
         &__image--home {
-            width: 300px;
+            width: 400px;
             margin-top: 5em;
-            margin-left: 1em;
+            margin-left: 0em;
         }
 
 
@@ -560,6 +575,9 @@
             margin-top: 5em;
         }
 
+        &__canvas--kilo, &__canvas--title {
+            margin-left: -4.5%;
+        }
     }
     #maps {
         width: 100%;
@@ -678,8 +696,8 @@
         }
 
         &__image--home {
-            width: 500px;
-            margin-top: 0em;
+            width: 450px;
+            margin-top: 2em;
             margin-left: -8em;
         }
 
@@ -710,6 +728,17 @@
 
         &__copy--proces2 {
             margin-top: 34em;
+        }
+
+
+        &__canvas--kilo, &__canvas--title {
+            margin-left: -29%;
+            margin-top: -195px;
+            position: fixed;
+        }
+
+        &__canvas--kilo{
+            font-size: 2.5em;
         }
     }
 
