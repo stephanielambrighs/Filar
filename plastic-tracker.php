@@ -11,7 +11,13 @@
   }else{
     // else do something in this page
     $u = new User();
-    $currentPlastic = $u->plasticTracker();
+    $email = $_SESSION['email'];
+    $id = $u->getId($email)[0][0];
+    $allDelivered = $u->allDelivered($id);
+    $u->allDeliveredSum($id);
+    $currentPlastic = $u->plasticTracker($id);
+    $coupons_used = $u->getCoupons($id);
+    $coupons_available = $u->plasticTracker($id)[0];
 }
 
 ?>
@@ -57,8 +63,8 @@
     </figure>
     <div class="card__body--tracker">
         <div class="card__copy">
-            <h2 class="card__subtitle">Bonnen ontvangen</h2>
-            <h3 class="card__subtitle--h3"><?php echo $currentPlastic[0] ?></h3>
+            <h2 class="card__subtitle">Bonnen beschikbaar</h2>
+            <h3 class="card__subtitle--h3"><?php echo $coupons_available-$coupons_used ?></h3>
         </div>
         <div class="card__copy">
             <h2 class="card__subtitle">Totaal PET ingeleverd</h2>
