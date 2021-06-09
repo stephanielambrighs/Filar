@@ -1,0 +1,757 @@
+.card {
+    background-color: #F4F6FB;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    margin-top: 0;
+
+    &__title{
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 1.8em;
+    }
+
+    &__title--item {
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 1.8em;
+        padding: 1em;
+        background-color: white;
+        margin-bottom: 0;
+    }
+
+    &__title--models {
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 1.8em;
+    }
+
+    &__body {
+        margin-left: 1.5em;
+        color: #7E8498;
+    }
+
+    &__body--models{
+        margin-left: 1.5em;
+        color: #7E8498;
+    }
+
+    &__image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        width: 20em;
+    }
+
+    &__body--switch {
+        margin-left: 1.5em;
+        color: #7E8498;
+    }
+
+    &__body--switch--home {
+        margin-left: 1.5em;
+        color: #7E8498;
+    }
+
+    &__subtitle__usecases{
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    &--usecases{
+        margin-top: 42px;
+        margin-bottom: 42px;
+    }
+
+    &__image__usecases {
+        width: 317px;
+        height: 317px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+    }
+
+    &__body--tracker {
+        text-align: center;
+    }
+
+    &__subtitle--h3, &__canvas--kilo {
+        color: #2628BA;
+        font-size: 1.6em;
+    }
+
+    &__copy--code {
+        color: #7E8498;
+        margin-left: 2em;
+        margin-bottom: 4em;
+        margin-top: 3em;
+        margin-right: 2em;
+    }
+
+    &--code {
+        background-color: #F4F6FB;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding-top: 1em;
+        padding-bottom: 2em;
+        margin-top: 0;
+    }
+
+    &__image--chart{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        width: 20em;
+        z-index: 1;
+    }
+
+
+    &--shop{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+    }
+
+    &--shop--item {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+        background-color: white;
+        padding-top: 2.5em;
+    }
+
+    &__shop--ownarticle {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+        background-color: white;
+        padding-top: 1em;
+    }
+
+    &__body__shop{
+        margin: 0;
+    }
+
+    &__image__print {
+        width: 200px;
+        height: 230px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+    }
+
+    &__subtitle__body{
+        color: #7E8498;
+    }
+
+    &__image__print--ownarticle{
+        width: 300px;
+        height: 280px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+    }
+
+
+    &__subtitle__shop {
+        color: #262F4A;
+    }
+
+    &__shop--center {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding-top: 8em;
+        padding-bottom: 18em;
+    }
+
+    &__header__shop--center{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-left: 0.2em;
+    }
+
+    &__image__print--center{
+        width: 150px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 2em;
+    }
+
+    &__subtitle__shop--center{
+        text-align: center;
+        padding-bottom: 1em;
+    }
+
+    &__body--item {
+        margin-left: 1.5em;
+        color: #7E8498;
+    }
+
+    &__body__block {
+        margin-top: 5em;
+        display: grid;
+        grid-template-columns: 55px 10% 80%;
+    }
+
+    &__arrow--first {
+        display: grid;
+        width: 50px;
+    }
+
+    &__arrow--second {
+        display: grid;
+        width: 50px;
+    }
+
+    &__img--first, &__img--second{
+        width: 28px;
+    }
+
+    &__img--first{
+        transform: rotate(180deg);
+    }
+
+    &__image--item {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        width: 20em;
+    }
+
+    &__subtitle--item {
+        color: #262F4A;
+
+    }
+
+    &__count {
+        border: 3px solid #262F4A;
+        padding: 15px 22px;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    &__count span {
+        color: #262F4A;
+        font-weight: 600;
+    }
+
+    &__image--filament {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        width: 25em;
+    }
+
+    &__image--models{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        width: 200px;
+    }
+
+    &__subtitle--models {
+        text-align: center;
+    }
+
+    &__image--models--netfabb {
+        width: 170px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__form--split {
+        margin-left: 2em;
+    }
+
+    &__title--split {
+        text-align: center;
+    }
+
+    &__image--icon {
+        width: 50px;
+        margin-bottom: -1em;
+    }
+
+    &__body--shop {
+        margin-left: 2.2em;
+        display: grid;
+        grid-template-rows: 33% 20% 33%;
+        // width: 200px;
+    }
+
+    &__body__block--large{
+        margin-top: 0;
+        display: grid;
+        grid-template-columns: 55px 10% 80%;
+    }
+
+    &--home {
+        background-image: url(/images/14_HeaderBackground.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        padding-top: 1em;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding-bottom: 5em;
+    }
+
+
+    &__subtitle--home {
+        color: white;
+        font-size: 2em;
+
+    }
+
+    &__copy--home {
+        color: white;
+        margin-bottom: 3.5em;
+    }
+
+    &__image--home {
+        width: 350px;
+        margin-left: 1em;
+    }
+
+    &__image--proces1 {
+        width: 350px;
+        // margin-left: 1em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__image--proces {
+        display: none;
+    }
+
+    &__body--switch--vuilbak {
+        margin-top: 2em;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: #7E8498;
+        margin-left: 2em;
+    }
+
+    &__copy--vuilbak {
+        margin-bottom: 3em;
+    }
+
+    &__figure--switch--home--right {
+        display: none;
+    }
+
+    &__figure--switch--home2 {
+        margin-left: 0em;
+    }
+
+    &__canvas--kilo, &__canvas--title {
+        text-align: center;
+        z-index: 2;
+        position: absolute;
+        margin-top: -180px;
+        margin-left: -7%;
+        width: 100%;
+    }
+
+    &__canvas--kilo{
+        font-size: 2em;
+        padding-top: 1em;
+    }
+
+    &__count--input {
+        width: 10px;
+        border: 2px solid white;
+        margin-left: -4px;
+    }
+
+
+}
+
+#mission {
+    background-color: white;
+}
+
+#maps {
+    width: 100%;
+    height: 300px;
+}
+
+@media screen and (min-width: 650px) {
+    .card{
+
+        &__header{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+
+        &__body {
+            margin-top: 6em;
+        }
+
+        &__body--models{
+            margin-top: 6em;
+        }
+
+        &__image{
+            margin-top: 3.5em;
+        }
+
+        &__header--switch {
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+        &__header--switch--home {
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+        &__header--models {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+
+        &__body--switch {
+            margin-top: 6em;
+            order: 1;
+            margin-left: 1.5em;
+        }
+
+        &__figure--switch {
+            order: 2;
+            padding: 0;
+            margin-left: 1.8em;
+        }
+
+        &__figure--switch--home {
+            order: 2;
+            padding: 0;
+            margin-left: 1.8em;
+        }
+
+        &__figure--switch--models {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            order: 2;
+            padding: 0;
+            margin-left: 1.8em;
+            margin-top: 10em;
+        }
+
+        &__image--models {
+            width: 150px;
+        }
+
+        &--usecases{
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+        }
+
+        &__image__usecases{
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        &__subtitle__usecases{
+            margin-left: 0em;
+            margin-top: -2.5em;
+            text-align: center;
+        }
+
+        &__header--code {
+            margin-left: 5em;
+            margin-right: 5em;
+        }
+
+        &__image--chart{
+            margin-top: 3.5em;
+        }
+
+        &--shop{
+            display:grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+        }
+
+        &--shop--item {
+            display:grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+        }
+
+        &__image__print {
+            width: 116px;
+            height: 150px;
+        }
+
+        &__shop--ownarticle {
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+
+        &__image__print--ownarticle{
+            width: 300px;
+            height: 280px;
+        }
+
+
+        &__subtitle__shop {
+            color: #262F4A;
+        }
+
+
+        &__image__print--center{
+            width: 200px;
+        }
+
+        &__header__shop--center{
+            max-width: 450px;
+            margin: auto;
+        }
+
+        &__body--item {
+            margin-right: 1.5em;
+        }
+
+        &__image--filament {
+            width: 20em;
+            height: 20em;
+        }
+
+        &__figure--models {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            margin-left: 1.8em;
+            margin-top: 8em;
+        }
+
+        &__image--models--netfabb {
+            width: 120px;
+        }
+
+        &__title--models {
+            margin-bottom: -2em;
+        }
+
+        &__form {
+            margin-top: 5em;
+        }
+
+        &--home {
+            background-image: url(/images/14_HeaderBackground.png);
+            background-size: 100% 80%;
+            padding-bottom: 15em;
+        }
+
+        &__subtitle--home {
+            font-size: 2.5em;
+            margin-top: 0;
+        }
+
+        &__image--home {
+            width: 400px;
+            margin-top: 5em;
+            margin-left: 0em;
+        }
+
+
+        &__image--proces1 {
+            width: 350px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &__image--proces {
+            display: block;
+            width: 300px;
+            margin-left: 1em;
+            margin-top: 8em;
+        }
+
+        &__body--switch--vuilbak {
+            margin-top: 5em;
+        }
+
+        &__canvas--kilo, &__canvas--title {
+            margin-left: -4.5%;
+        }
+    }
+    #maps {
+        width: 100%;
+        height: 300px;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+    .card{
+
+        &__header{
+            display: grid;
+            grid-template-columns: 40% 60%;
+            margin-top: 2em;
+        }
+
+        &__image{
+            margin-top: 3.5em;
+        }
+
+        &__body{
+            margin-right: 10em;
+        }
+
+        &__body--models{
+            margin-left: 5em;
+        }
+
+        &__body--switch {
+            order: 1;
+            margin-left: 5em;
+        }
+
+        &__body--switch--home {
+            order: 1;
+            margin-left: 5em;
+        }
+
+        &__header--switch {
+            display: grid;
+            grid-template-columns: 60% 40%;
+        }
+
+        &__header--switch--home {
+            display: grid;
+            grid-template-columns: 33% 35% 33%;
+        }
+
+        &__figure--switch {
+            order: 2;
+            padding: 0;
+            margin-left: 1.5em;
+        }
+
+        &--usecases{
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+
+        }
+
+        &__image__usecases{
+            justify-content: center;
+            width: 300px;
+            height: 300px;
+        }
+
+        &__subtitle__usecases{
+            margin-left: 140px;
+        }
+
+
+        &--code {
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+        &__header--code {
+            margin-left: 5em;
+            margin-right: 5em;
+        }
+
+        &__body--tracker {
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+
+        &__image__print {
+            width: 200px;
+            height: 250px;
+        }
+
+        &__image__print--ownarticle{
+            width: 442px;
+            height: 400px;
+        }
+
+        &__body--item {
+            margin-right: 10em;
+        }
+
+        &__image--item {
+            width: 380px;
+        }
+
+        &__image--filament {
+            width: 25em;
+            height: 25em;
+        }
+
+        &--home {
+            background-image: url(/images/14_HeaderBackground.png);
+            background-size: 100% 80%;
+            padding-bottom: 15em;
+        }
+
+        &__image--home {
+            width: 450px;
+            margin-top: 2em;
+            margin-left: -8em;
+        }
+
+        &__body--switch--vuilbak {
+            margin-top: 8em;
+            margin-left: 5em;
+        }
+
+        &__figure--switch--home--right {
+            display: block;
+            order: 2;
+            padding: 0;
+            margin-left: 1.8em;
+            margin-top: 31em;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color:#7E8498;
+
+        }
+
+        &__figure--switch--home--right img {
+            transform: scaleX(-1);
+            margin-left: -5em;
+        }
+
+        &__figure--switch--home2 {
+            display: none;
+        }
+
+        &__copy--proces2 {
+            margin-top: 34em;
+        }
+
+
+        &__canvas--kilo, &__canvas--title {
+            margin-left: -29%;
+            margin-top: -195px;
+            position: fixed;
+        }
+
+        &__canvas--kilo{
+            font-size: 2.5em;
+        }
+    }
+
+    #maps {
+        width: 100%;
+        height: 400px;
+        margin-bottom: -80px;
+    }
+}
+
