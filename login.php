@@ -14,6 +14,7 @@ if(!isset($_SESSION['id'])){
       if($user->canLogin()){
         session_start();
         $_SESSION['id'] = $user->getId($email)[0][0];
+        $_SESSION['id'] = $user;
         header("Location: plastic-tracker.php");
       }
       else{
@@ -56,11 +57,11 @@ if(!isset($_SESSION['id'])){
   </div>
   <div class="form-group__header">
     <label for="myInput" class="form-group__label">E-mailadres</label>
-    <input name="email" type="text" id="myInput" class="form-group__input" placeholder="john.doe@gmail.com">
+    <input name="email" type="text" class="form-group__input" placeholder="john.doe@gmail.com">
   </div>
   <div class="form-group__header">
     <label for="myInput" class="form-group__label">Wachtwoord</label>
-    <input name="password" type="password" id="myInput" class="form-group__input" placeholder="********">
+    <input name="password" type="password" class="form-group__input" placeholder="********">
   </div>
   <div class="form-group__header">
     <button type="submit" class="button">
