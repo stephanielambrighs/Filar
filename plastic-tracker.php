@@ -51,9 +51,9 @@
   <h1 class="card__title">Plastic Tracker</h1>
     <figure class="card__figure">
       <!-- <img src="/images/2_Sterk.png" alt="donut_chart" class="card__image--chart"> -->
-      <p>Huidig PET doel</p>
-      <p>0,<span id="currentTarget"><?php echo $currentPlastic[1] ?></span>/1kg</p>
       <canvas id="myChart" class="card__image--chart"></canvas>
+        <h3 class="card__canvas--title">Huidig PET doel</h3>
+        <h2 class="card__canvas--kilo">0,<span id="currentTarget"><?php echo $currentPlastic[1] ?></span>/1kg</h2>
     </figure>
     <div class="card__body--tracker">
         <div class="card__copy">

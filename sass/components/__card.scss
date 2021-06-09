@@ -77,7 +77,7 @@
         text-align: center;
     }
 
-    &__subtitle--h3 {
+    &__subtitle--h3, &__canvas--kilo {
         color: #2628BA;
         font-size: 1.6em;
     }
@@ -104,6 +104,7 @@
         margin-right: auto;
         border-radius: 10px;
         width: 20em;
+        z-index: 1;
     }
 
 
@@ -347,6 +348,20 @@
         margin-left: 0em;
     }
 
+    &__canvas--kilo, &__canvas--title {
+        text-align: center;
+        z-index: 2;
+        position: absolute;
+        margin-top: -180px;
+        margin-left: -7%;
+        width: 100%;
+    }
+
+    &__canvas--kilo{
+        font-size: 2em;
+        padding-top: 1em;
+    }
+
 
 }
 
@@ -560,6 +575,9 @@
             margin-top: 5em;
         }
 
+        &__canvas--kilo, &__canvas--title {
+            margin-left: -4.5%;
+        }
     }
     #maps {
         width: 100%;
@@ -710,6 +728,17 @@
 
         &__copy--proces2 {
             margin-top: 34em;
+        }
+
+
+        &__canvas--kilo, &__canvas--title {
+            margin-left: -29%;
+            margin-top: -195px;
+            position: fixed;
+        }
+
+        &__canvas--kilo{
+            font-size: 2.5em;
         }
     }
 
