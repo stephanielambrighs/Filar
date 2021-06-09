@@ -53,6 +53,7 @@ if(!isset($_SESSION['id'])){
 
 
 <h1 class="card__title">Profiel details</h1>
+
 <ul class="list">
     <div id="showProfileDetails" class="list__second">
         <h2 class="list__subtitle">Persoonlijke details</h2>
@@ -82,6 +83,9 @@ if(!isset($_SESSION['id'])){
             </ul>
         </li>
         <a id="edit" href="#" class="list__link">Persoonlijke details bijwerken</a>
+        <a href="logout.php" class="button__item--edit">
+            <span class="button__body">Uitloggen</span>
+        </a>
     </div>
 
     <form method="POST" id="editProfileDetails" class="list__second">
